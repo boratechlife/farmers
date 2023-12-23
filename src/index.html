@@ -192,7 +192,176 @@
           </li>
         </ul>
       </aside>
-      <main class="h-full">Main</main>
+      <main class="h-full pl-8">
+        <div class="pt-6 px-4">
+          <div class="flex justify-between items-center">
+            <div class="rounded border border-gray-2 relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="bg-transparent py-2.5 pl-4 pr-10 focus:outline-gray-2"
+              />
+              <svg
+                class="h-[18px] w-auto absolute right-4 top-1/2 -translate-y-1/2 fill-gray-3"
+                viewBox="0 0 17 18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.458 4.40969C14.7466 6.80618 14.6591 10.6042 12.2626 12.8927C9.86614 15.1813 6.06816 15.0938 3.7796 12.6973C1.49103 10.3008 1.57852 6.50285 3.975 4.21429C6.37148 1.92572 10.1695 2.01321 12.458 4.40969ZM14.3244 13.6037C16.8385 10.5224 16.722 5.97881 13.9044 3.02842C10.853 -0.166891 5.78904 -0.283537 2.59373 2.76788C-0.601583 5.8193 -0.71823 10.8833 2.33319 14.0786C5.15072 17.029 9.68411 17.3546 12.878 14.985L14.9926 17.1994C15.374 17.5988 16.007 17.6134 16.4064 17.2319C16.8059 16.8505 16.8204 16.2175 16.439 15.8181L14.3244 13.6037Z"
+                />
+              </svg>
+            </div>
+
+            <div class="pr-20 flex items-center gap-3">
+              <img
+                class="rounded-full"
+                src="/public/images/user.png"
+                width="42"
+                height="42"
+                alt="Brian"
+              />
+              <span
+                class="font-medium text-base font-poppins pr-7 text-tertiary"
+                >Brian</span
+              >
+            </div>
+          </div>
+
+          <div class="mt-6 pl-8 pr-3.5">
+            <hr class="border-transparent border-0 h-px bg-gray-4" />
+          </div>
+        </div>
+        <div class="pr-[4.25rem] mt-[30px]">
+          <h1
+            class="text-success-3 font-poppins text-2xl font-medium leading-[1.75]"
+          >
+            Dashboard
+          </h1>
+          <p class="text-lg leading-[42px] text-dark mt-4">
+            Welcome back Brian
+          </p>
+
+          <div class="mt-8 flex flex-col gap-8">
+            <!-- heavy-rainfall -->
+            <div
+              class="bg-white rounded-2xl border border-gray-2 py-4 px-8 grid grid-cols-[1fr,185px]"
+            >
+              <div>
+                <p class="text-primary font-medium text-base tracking-[.374px]">
+                  Heavy Rainfall Expected: Important Weather Update ☔️
+                </p>
+
+                <p
+                  class="mt-4 text-[22px] font-medium leading-6 tracking-[.374px] text-black"
+                >
+                  Kitale
+                </p>
+
+                <div
+                  class="flex flex-col gap-1 text-xs leading-6 tracking-[.374px] mt-2"
+                >
+                  <span>Temperature: 22.22°C</span>
+                  <span>Wind: 3.22 M/S</span>
+                  <span>Humidity: 72%</span>
+                </div>
+              </div>
+              <img
+                src="/public/images/cloud_rain.png"
+                height="170"
+                width="185"
+                alt=""
+              />
+            </div>
+
+            <!-- top-3-farms -->
+            <div class="flex flex-col gap-4">
+              <p class="text-lg leading-[42px] text-dark">Top 3 Farms</p>
+
+              <div
+                class="bg-white py-2 grid grid-cols-3 divide-x divide-gray-5 rounded overflow-hidden"
+              >
+                <div class="px-6 py-4">
+                  <p
+                    class="text-blue-gray text-base font-semibold leading-[1.25] -tracking-[.32px] mb-2"
+                  >
+                    Lovington farms
+                  </p>
+                  <div class="grid grid-cols-[1fr,98px]">
+                    <div>
+                      <p
+                        class="text-xl font-semibold leading-normal -tracking-[.4px] text-success-3"
+                      >
+                        Wheat
+                      </p>
+                      <p class="mt-2 text-sm font-medium text-blue-gray">
+                        Kitale town
+                      </p>
+                    </div>
+                    <img
+                      src="/public/images/wheat.png"
+                      width="98"
+                      height="60"
+                      alt="Wheat at Lovington farms,Kitale town"
+                    />
+                  </div>
+                </div>
+                <div class="px-6 py-4">
+                  <p
+                    class="text-blue-gray text-base font-semibold leading-[1.25] -tracking-[.32px] mb-2"
+                  >
+                    Keriago farms
+                  </p>
+                  <div class="grid grid-cols-[1fr,98px]">
+                    <div>
+                      <p
+                        class="text-xl font-semibold leading-normal -tracking-[.4px] text-success-3"
+                      >
+                        Maize
+                      </p>
+                      <p class="mt-2 text-sm font-medium text-blue-gray">
+                        Kitale town
+                      </p>
+                    </div>
+                    <img
+                      src="/public/images/maize.png"
+                      width="98"
+                      height="60"
+                      alt="Maize at Keriago farms,Kitale town"
+                    />
+                  </div>
+                </div>
+                <div class="px-6 py-4">
+                  <p
+                    class="text-blue-gray text-base font-semibold leading-[1.25] -tracking-[.32px] mb-2"
+                  >
+                    Kibomet farms
+                  </p>
+                  <div class="grid grid-cols-[1fr,98px]">
+                    <div>
+                      <p
+                        class="text-xl font-semibold leading-normal -tracking-[.4px] text-success-3"
+                      >
+                        Tea
+                      </p>
+                      <p class="mt-2 text-sm font-medium text-blue-gray">
+                        Kitale town
+                      </p>
+                    </div>
+                    <img
+                      src="/public/images/tea.png"
+                      width="98"
+                      height="60"
+                      alt="Tea at Kibomet farms,Kitale town"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>
