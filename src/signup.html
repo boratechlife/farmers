@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="flex">
+<div class=" flex items-center w-full">
+  <div class="w-full lg:w-1/2 flex ">
+    <img src="./loginImage.png" class="w-full  h-screen object-top object-cover" alt="">
+  </div>
+
+  <div class="w-full md:w-1/2 flex  items-center flex-col justify-center relative">
+    <!-- TOP START -->
+    <div class="absolute top-0 left-4">
+      <img src="./images/login-star.png" class="w-[77px] h-[69px] object-fit" alt="">
+    </div>
+        <!-- BOTTOM START -->
+        <div class="absolute -bottom-12 right-40">
+          <img src="./images/login-star.png" class="w-[77px] h-[69px] object-fit" alt="">
+        </div>
+    <div class="w-2/5 flex flex-col items-center justify-center">
+      <div class="mb-4">
+        <img src="./logo.png" class="w-[160px] h-[55px] object-fit" alt="">
+      </div>
+      <div class="mb-4">
+        <h4  class="text-[#334C36] text-center font-Poppins font-medium text-[24px] leading-normal tracking-[0.1px] capitalize">Create Account</h4>
+      </div>
+      <form action="#" method="POST" class="space-y-4 w-full">
+   
+        
+        <div class="">
+          <input id="full-name" name="text"
+          placeholder="Full name "
+           type="text" autocomplete="name" required class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+  
+        <div class="">
+          <input id="email" name="email"
+          placeholder="Email "
+           type="email" autocomplete="email" required class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+
+        <div class="">
+          <input id="phone_number" name="phone_number"
+          placeholder="Phone Number "
+           type="text" autocomplete="name" required class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+
+
+
+        <div>
+          <div class="mt-2 relative">
+            <div class="absolute  top-1/2 transform -translate-y-1/2 right-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.0002 4.99984C13.1585 4.99984 15.9752 6.77484 17.3502 9.58317C16.8585 10.5998 16.1668 11.4748 15.3418 12.1832L16.5168 13.3582C17.6752 12.3332 18.5918 11.0498 19.1668 9.58317C17.7252 5.92484 14.1668 3.33317 10.0002 3.33317C8.94183 3.33317 7.92516 3.49984 6.96683 3.80817L8.34183 5.18317C8.8835 5.07484 9.4335 4.99984 10.0002 4.99984ZM9.1085 5.94984L10.8335 7.67484C11.3085 7.88317 11.6918 8.2665 11.9002 8.7415L13.6252 10.4665C13.6918 10.1832 13.7418 9.88317 13.7418 9.57484C13.7502 7.50817 12.0668 5.83317 10.0002 5.83317C9.69183 5.83317 9.40016 5.87484 9.1085 5.94984ZM1.67516 3.22484L3.9085 5.45817C2.55016 6.52484 1.47516 7.9415 0.833496 9.58317C2.27516 13.2415 5.8335 15.8332 10.0002 15.8332C11.2668 15.8332 12.4835 15.5915 13.6002 15.1498L16.4502 17.9998L17.6252 16.8248L2.85016 2.0415L1.67516 3.22484ZM7.92516 9.47484L10.1002 11.6498C10.0668 11.6582 10.0335 11.6665 10.0002 11.6665C8.85016 11.6665 7.91683 10.7332 7.91683 9.58317C7.91683 9.5415 7.92516 9.5165 7.92516 9.47484ZM5.09183 6.6415L6.55016 8.09984C6.3585 8.55817 6.25016 9.05817 6.25016 9.58317C6.25016 11.6498 7.9335 13.3332 10.0002 13.3332C10.5252 13.3332 11.0252 13.2248 11.4752 13.0332L12.2918 13.8498C11.5585 14.0498 10.7918 14.1665 10.0002 14.1665C6.84183 14.1665 4.02516 12.3915 2.65016 9.58317C3.2335 8.3915 4.0835 7.40817 5.09183 6.6415Z" fill="#4F5253"/>
+                </svg>
+                
+            </div>
+            <input id="password" name="password" type="password"
+            placeholder="Password" autocomplete="current-password" required class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+
+  
+
+      <div>
+        <button type="submit" 
+        class="bg-primary w-full  rounded-md  flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase">Create Account</button>
+      </div>
+
+
+    </form>
+    <div class="inline-flex w-full items-center mt-4">
+      <div class="flex items-center">
+    
+        <span  class="  text-[#4F5253] text-center font-Poppins text-[14px] font-normal leading-normal">Already have an account ?</span>
+        <a href="#" class="font-semibold  ml-3 text-secondary text-center font-Poppins text-[14px] leading-normal">Login</a>
+      </div>
+
+    </div>
+
+    <div class="relative">
+      <div class="absolute inset-0 flex items-center" aria-hidden="true">
+        <div class="w-full border-t border-gray-200"></div>
+      </div>
+      <div class="relative w-full flex justify-center text-[#4F5253] text-center font-Poppins text-[16px] font-normal leading-[375%]">
+        <span class="bg-white px-6 text-gray-900">Or</span>
+      </div>
+    </div>
+    <div class="mt-4 flex  w-full gap-4">
+      <a href="#" class="flex w-full  py-[10px] gap-[12px] justify-center items-center bg-[#FAFDFF] border-[2px] border-Stroke rounded-[8px]">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_24_9014)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.66 9.24527C17.66 8.60827 17.603 7.99427 17.496 7.40527H9.02V10.8863H13.864C13.655 12.0113 13.021 12.9643 12.068 13.6033V15.8613H14.976C16.678 14.2943 17.66 11.9873 17.66 9.24627V9.24527Z" fill="#4285F4"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.023 18.0449C11.453 18.0449 13.49 17.2389 14.979 15.8649L12.07 13.6049C11.264 14.1449 10.234 14.4649 9.023 14.4649C6.679 14.4649 4.695 12.8809 3.987 10.7539H0.979996V13.0859C2.46 16.0279 5.505 18.0449 9.023 18.0449Z" fill="#34A853"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.984 10.7569C3.804 10.2169 3.702 9.63988 3.702 9.04688C3.702 8.45388 3.804 7.87688 3.984 7.33688V5.00488H0.976997C0.366997 6.21988 0.0199966 7.59488 0.0199966 9.04688C0.0199966 10.4989 0.367997 11.8739 0.976997 13.0889L3.984 10.7569Z" fill="#FBBC05"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.023 3.62492C10.344 3.62492 11.531 4.07892 12.463 4.96992L15.045 2.38992C13.484 0.935922 11.448 0.0449219 9.022 0.0449219C5.505 0.0449219 2.46 2.06192 0.979996 5.00292L3.987 7.33492C4.695 5.20792 6.679 3.62492 9.023 3.62492Z" fill="#EA4335"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_24_9014">
+          <rect width="18" height="18" fill="white" transform="translate(0.0199966 0.0449219)"/>
+          </clipPath>
+          </defs>
+          </svg>
+          
+        <span class="text-sm font-semibold leading-6">Continue with Google</span>
+      </a>
+
+
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
