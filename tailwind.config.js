@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", ...defaultTheme.fontFamily.serif],
         roboto: ["Roboto", ...defaultTheme.fontFamily.serif],
+        overpass: ["Overpass", ...defaultTheme.fontFamily.serif],
       },
       colors: {
         primary: "#359744",
