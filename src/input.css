@@ -6,3 +6,9 @@
 :root {
   height: 100%;
 }
+.notification-active {
+    border-bottom: 1px solid rgba(108, 102, 133, 0.10);
+
+background: rgba(191, 191, 217, 0.10);
+}
+@tailwind utilities;
