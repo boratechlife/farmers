@@ -16,7 +16,7 @@ module.exports = {
         secondary: { DEFAULT: "#8AD23B", 100: "#FFC01E" },
         tertiary: { DEFAULT: "#161E54", 1: "#111827" },
         light: "#fafafa",
-        "blue-gray": "#475467",
+        "blue-gray": { DEFAULT: "#475467", 1: "#1D2939", 2: "#101828" },
 
         dark: "#1c1c1c",
         success: {
@@ -36,6 +36,8 @@ module.exports = {
           8: "#F9FAFB",
           9: "#6B7280",
           10: "#4C4D4D",
+          11: "#344054",
+          12: "#FAFAFA",
         },
       },
     },
