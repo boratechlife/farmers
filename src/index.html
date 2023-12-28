@@ -13,25 +13,85 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link href="/dist/output.css" rel="stylesheet" />
     <title>Farmers</title>
   </head>
   <body class="h-full font-poppins">
-    <div class="h-full grid grid-cols-[15.125rem_1fr] bg-light">
-      <aside class="border-r-[.1px] border-gray-1 h-full">
-        <div class="pt-5 px-10 pb-8">
+    <div class="h-full grid grid-cols-1 lg:grid-cols-[15.125rem_1fr] bg-light">
+      <aside class="lg:border-r-[.1px] border-gray-1 lg:h-full">
+        <div class="pt-5 px-5 lg:px-10 lg:pb-8 flex justify-between">
           <a href="/">
             <img
-              class="mx-auto"
+              class="h-6 w-auto lg:h-auto lg:mx-auto"
               src="/public/images/ctn_logo.png"
               width="160"
               height="55"
-              alt="log"
+              alt="logo"
             />
           </a>
+
+          <button id="menu-btn" class="lg:hidden">
+            <svg
+              class="h-7 aspect-auto"
+              viewBox="0 0 26 27"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_324_9078)">
+                <path
+                  d="M5 18.5H21C21.55 18.5 22 18.05 22 17.5C22 16.95 21.55 16.5 21 16.5H5C4.45 16.5 4 16.95 4 17.5C4 18.05 4.45 18.5 5 18.5ZM5 13.5H21C21.55 13.5 22 13.05 22 12.5C22 11.95 21.55 11.5 21 11.5H5C4.45 11.5 4 11.95 4 12.5C4 13.05 4.45 13.5 5 13.5ZM4 7.5C4 8.05 4.45 8.5 5 8.5H21C21.55 8.5 22 8.05 22 7.5C22 6.95 21.55 6.5 21 6.5H5C4.45 6.5 4 6.95 4 7.5Z"
+                  fill="#1C1C1C"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_324_9078"
+                  x="-3"
+                  y="0.5"
+                  width="32"
+                  height="32"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_324_9078"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_324_9078"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </button>
         </div>
 
-        <ul class="">
+        <ul
+          id="links"
+          class="data-[active='true']:block data-[active='false']:hidden pt-5 lg:pt-0 lg:data-[active='false']:block lg:block"
+        >
           <li>
             <a
               href="#"
@@ -196,8 +256,8 @@
           </li>
         </ul>
       </aside>
-      <main class="h-full pl-8 overflow-y-auto">
-        <div class="pt-6 px-4">
+      <main class="h-full px-5 lg:pr-0 lg:pl-8 overflow-y-auto">
+        <div class="hidden lg:block pt-6 px-4">
           <div class="flex justify-between items-center">
             <div class="rounded border border-gray-2 relative">
               <input
@@ -237,7 +297,7 @@
             <hr class="border-transparent border-0 h-px bg-gray-4" />
           </div>
         </div>
-        <div class="pr-[4.25rem] mt-[30px] pb-6">
+        <div class="lg:pr-8 xl:pr-[4.25rem] mt-[30px] pb-6">
           <h1
             class="text-success-3 font-poppins text-2xl font-medium leading-[1.75]"
           >
@@ -247,14 +307,24 @@
             Welcome back Brian
           </p>
 
-          <div class="mt-8 flex flex-col gap-8">
+          <div class="mt-4 lg:mt-8 flex flex-col gap-8">
             <!-- heavy-rainfall -->
             <div
-              class="bg-white rounded-2xl border border-gray-2 py-4 px-8 grid grid-cols-[1fr,185px]"
+              class="bg-white rounded-2xl border border-gray-2 p-4 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr,185px]"
             >
               <div>
-                <p class="text-primary font-medium text-base tracking-[.374px]">
+                <p
+                  class="text-primary font-medium text-base tracking-[.374px] hidden lg:block"
+                >
                   Heavy Rainfall Expected: Important Weather Update ☔️
+                </p>
+                <p
+                  class="text-primary font-medium text-sm tracking-[.374px] lg:hidden"
+                >
+                  Important Weather Update
+                  <span class="text-xs mt-2 block"
+                    >Heavy Rainfall Expected ☔️</span
+                  >
                 </p>
 
                 <p
@@ -281,12 +351,14 @@
 
             <!-- top-3-farms -->
             <div class="flex flex-col gap-4">
-              <p class="text-lg leading-[42px] text-dark">Top 3 Farms</p>
+              <p class="text-base lg:text-lg lg:leading-[42px] text-dark">
+                Top 3 Farms
+              </p>
 
               <div
-                class="bg-white py-2 grid grid-cols-3 divide-x divide-gray-5 rounded overflow-hidden"
+                class="xl:bg-white *:bg-white *:rounded lg:py-2 grid grid-cols-1 gap-4 xl:gap-0 xl:grid-cols-3 xl:divide-x divide-gray-5 xl:rounded overflow-hidden"
               >
-                <div class="px-6 py-4">
+                <div class="lg:px-6 p-4">
                   <p
                     class="text-blue-gray text-base font-semibold leading-[1.25] -tracking-[.32px] mb-2"
                   >
@@ -311,7 +383,7 @@
                     />
                   </div>
                 </div>
-                <div class="px-6 py-4">
+                <div class="lg:px-6 p-4">
                   <p
                     class="text-blue-gray text-base font-semibold leading-[1.25] -tracking-[.32px] mb-2"
                   >
@@ -336,7 +408,7 @@
                     />
                   </div>
                 </div>
-                <div class="px-6 py-4">
+                <div class="lg:px-6 p-4">
                   <p
                     class="text-blue-gray text-base font-semibold leading-[1.25] -tracking-[.32px] mb-2"
                   >
@@ -366,19 +438,21 @@
 
             <!-- financial-trends -->
             <div class="flex flex-col gap-4">
-              <p class="text-lg leading-[42px] text-dark">Financial trends</p>
-              <div class="grid grid-cols-3 gap-8">
+              <p class="text-base lg:text-lg lg:leading-[42px] text-dark">
+                Financial trends
+              </p>
+              <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
                 <div
                   class="bg-white p-5 flex justify-between gap-10 rounded-xl border border-gray-2"
                 >
                   <div>
                     <p
-                      class="text-lg text-tertiary font-medium leading-7 mb-[22px]"
+                      class="text-sm lg:text-lg text-tertiary font-medium leading-7 mb-[22px]"
                     >
                       Current sales
                     </p>
                     <p
-                      class="text-4xl text-success-3 font-medium leading-7 mb-8"
+                      class="text-xl lg:text-4xl text-success-3 font-medium leading-7 mb-8"
                     >
                       216
                     </p>
@@ -404,12 +478,12 @@
                 >
                   <div>
                     <p
-                      class="text-lg text-tertiary font-medium leading-7 mb-[22px]"
+                      class="text-sm lg:text-lg text-tertiary font-medium leading-7 mb-[22px]"
                     >
                       Profits
                     </p>
                     <p
-                      class="text-4xl text-success-3 font-medium leading-7 mb-8"
+                      class="text-xl lg:text-4xl text-success-3 font-medium leading-7 mb-8"
                     >
                       216,000
                     </p>
@@ -435,12 +509,12 @@
                 >
                   <div>
                     <p
-                      class="text-lg text-tertiary font-medium leading-7 mb-[22px]"
+                      class="text-sm lg:text-lg text-tertiary font-medium leading-7 mb-[22px]"
                     >
                       Losses
                     </p>
                     <p
-                      class="text-4xl text-success-3 font-medium leading-7 mb-8"
+                      class="text-xl lg:text-4xl text-success-3 font-medium leading-7 mb-8"
                     >
                       0
                     </p>
@@ -464,9 +538,11 @@
               </div>
             </div>
 
-            <div class="grid grid-cols-[1fr,42%] gap-8">
+            <div class="grid grid-cols-1 xl:grid-cols-[1fr,42%] gap-8">
               <!-- financial-analysis -->
-              <div class="py-7 px-4 bg-white rounded-lg border border-gray-2">
+              <div
+                class="py-7 px-4 bg-white rounded-lg border border-gray-2 overflow-x-auto"
+              >
                 <div
                   class="mb-[30px] flex justify-between items-center gap-[84px]"
                 >
@@ -515,7 +591,7 @@
                 </div>
                 <img
                   src="/public/images/fa_chart.png"
-                  class="w-full h-auto"
+                  class="w-[614px] max-w-[614px] h-auto lg:max-w-full lg:w-full"
                   alt="Financial Analysis Chart"
                 />
               </div>
@@ -602,17 +678,17 @@
             <div class="flex flex-col gap-4">
               <p class="text-lg leading-[42px] text-dark">Sales trends</p>
               <div
-                class="bg-white py-6 grid grid-cols-3 divide-x divide-gray-5 rounded overflow-hidden"
+                class="xl:bg-white *:bg-white *:py-6 xl:*:py-0 *:rounded xl:py-6 grid grid-cols-1 gap-4 xl:gap-0 xl:grid-cols-3 xl:divide-x divide-gray-5 xl:rounded overflow-hidden"
               >
-                <div class="px-6 grid grid-cols-[1fr,98px]">
+                <div class="px-4 lg:px-6 grid grid-cols-[1fr,98px]">
                   <div>
                     <p
-                      class="text-base font-semibold leading-[1.25] -tracking-[.32px] text-blue-gray"
+                      class="text-sm lg:text-base font-semibold leading-[1.25] -tracking-[.32px] text-blue-gray"
                     >
                       All Orders
                     </p>
                     <p
-                      class="text-4xl font-semibold leading-[44px] -tracking-[.72px] text-success-3"
+                      class="text-xl lg:text-4xl font-semibold leading-[44px] -tracking-[.72px] text-success-3"
                     >
                       4000
                     </p>
@@ -645,15 +721,15 @@
                     />
                   </div>
                 </div>
-                <div class="px-6 grid grid-cols-[1fr,98px]">
+                <div class="px-4 lg:px-6 grid grid-cols-[1fr,98px]">
                   <div>
                     <p
-                      class="text-base font-semibold leading-[1.25] -tracking-[.32px] text-blue-gray"
+                      class="text-sm lg:text-base font-semibold leading-[1.25] -tracking-[.32px] text-blue-gray"
                     >
                       Completed
                     </p>
                     <p
-                      class="text-4xl font-semibold leading-[44px] -tracking-[.72px] text-success-3"
+                      class="text-xl lg:text-4xl font-semibold leading-[44px] -tracking-[.72px] text-success-3"
                     >
                       500
                     </p>
@@ -686,15 +762,15 @@
                     />
                   </div>
                 </div>
-                <div class="px-6 grid grid-cols-[1fr,98px]">
+                <div class="px-4 lg:px-6 grid grid-cols-[1fr,98px]">
                   <div>
                     <p
-                      class="text-base font-semibold leading-[1.25] -tracking-[.32px] text-blue-gray"
+                      class="text-sm lg:text-base font-semibold leading-[1.25] -tracking-[.32px] text-blue-gray"
                     >
                       Pending
                     </p>
                     <p
-                      class="text-4xl font-semibold leading-[44px] -tracking-[.72px] text-success-3"
+                      class="text-xl lg:text-4xl font-semibold leading-[44px] -tracking-[.72px] text-success-3"
                     >
                       750
                     </p>
@@ -730,7 +806,7 @@
               </div>
             </div>
 
-            <div class="grid grid-cols-[41%,1fr] gap-6">
+            <div class="grid grid-cols-1 xl:grid-cols-[41%,1fr] gap-6">
               <!-- Trending market prices  -->
               <div class="bg-white rounded-lg border border-gray-2">
                 <div class="p-3">
@@ -817,8 +893,10 @@
                     >
                       <th>Name</th>
                       <th>Items Sold</th>
-                      <th>UNIT COST(KES)</th>
-                      <th>TOTAL SALES(KES)</th>
+                      <th class="hidden lg:table-cell">UNIT COST(KES)</th>
+                      <th>
+                        TOTAL SALES<span class="hidden lg:inline">(KES)</span>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -830,8 +908,8 @@
                           >Avocado</strong
                         >
                       </td>
-                      <td>3500</td>
-                      <td>350</td>
+                      <td class="">3500</td>
+                      <td class="hidden lg:table-cell">350</td>
                       <td>1,225,000</td>
                     </tr>
                     <tr
@@ -843,7 +921,7 @@
                         >
                       </td>
                       <td>2500</td>
-                      <td>100</td>
+                      <td class="hidden lg:table-cell">100</td>
                       <td>250,000</td>
                     </tr>
                     <tr
@@ -855,7 +933,7 @@
                         >
                       </td>
                       <td>1200</td>
-                      <td>200</td>
+                      <td class="hidden lg:table-cell">200</td>
                       <td>240,000</td>
                     </tr>
                     <tr
@@ -867,7 +945,7 @@
                         >
                       </td>
                       <td>500</td>
-                      <td>500</td>
+                      <td class="hidden lg:table-cell">500</td>
                       <td>250,000</td>
                     </tr>
                     <tr
@@ -879,7 +957,7 @@
                         >
                       </td>
                       <td>1000</td>
-                      <td>100</td>
+                      <td class="hidden lg:table-cell">100</td>
                       <td>100,000</td>
                     </tr>
                   </tbody>
@@ -890,5 +968,7 @@
         </div>
       </main>
     </div>
+
+    <script src="./index.js" defer></script>
   </body>
 </html>
