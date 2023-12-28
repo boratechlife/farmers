@@ -1,266 +1,490 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/output.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <title>Market Prices - Farmers</title>
 </head>
-<body class="flex bg-white">
-   <main>
-    <h4 class="text-[#334C36]  font-Poppins font-medium text-[24px] leading-normal tracking-[0.1px] ">Settings</h4>
-    <!-- Navigation Bar -->
-<nav class="">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-between">
-        <div class="flex space-x-4">
-          <!-- Primary Nav -->
-          <div class="flex items-center space-x-1">
-            <a href="#" class="py-3.5 px-3 text-primary border-b-4 border-primary font-semibold">Profile Settings</a>
-            <a href="#" class="py-3.5 px-3 text-[#49454F] hover:text-primary hover:border-primary transition duration-300 ease-in-out">Password And Security</a>
-            <a href="#" class="py-3.5 px-3 text-[#49454F] hover:text-primary hover:border-primary transition duration-300 ease-in-out">Farm Management</a>
-            <a href="#" class="py-3.5 px-3 text-[#49454F] hover:text-primary hover:border-primary transition duration-300 ease-in-out">Help And Support</a>
-          </div>
-        </div>
-      </div>
+
+<body class="h-full font-poppins">
+    <div class="h-full lg:grid lg:grid-cols-[15.125rem_1fr] bg-light">
+        <aside class="lg:border-r-[.1px] border-gray-1 lg:h-full">
+            <div class="pt-5 px-5 lg:px-10 lg:pb-8 flex justify-between">
+                <a href="/">
+                    <img class="h-6 w-auto lg:h-auto lg:mx-auto" src="/public/images/ctn_logo.png" width="160"
+                        height="55" alt="logo" />
+                </a>
+
+                <button id="menu-btn" class="lg:hidden">
+                    <svg class="h-7 aspect-auto" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_324_9078)">
+                            <path
+                                d="M5 18.5H21C21.55 18.5 22 18.05 22 17.5C22 16.95 21.55 16.5 21 16.5H5C4.45 16.5 4 16.95 4 17.5C4 18.05 4.45 18.5 5 18.5ZM5 13.5H21C21.55 13.5 22 13.05 22 12.5C22 11.95 21.55 11.5 21 11.5H5C4.45 11.5 4 11.95 4 12.5C4 13.05 4.45 13.5 5 13.5ZM4 7.5C4 8.05 4.45 8.5 5 8.5H21C21.55 8.5 22 8.05 22 7.5C22 6.95 21.55 6.5 21 6.5H5C4.45 6.5 4 6.95 4 7.5Z"
+                                fill="#1C1C1C" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_324_9078" x="-3" y="0.5" width="32" height="32"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="2" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_324_9078" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_324_9078"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </button>
+            </div>
+
+            <ul id="links"
+                class="data-[active='true']:block data-[active='false']:hidden pt-5 lg:pt-0 lg:data-[active='false']:block lg:block">
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6 14.03C6.26522 14.03 6.51957 14.1354 6.70711 14.3229C6.89464 14.5105 7 14.7648 7 15.03C7 15.58 6.55 16.03 6 16.03C3.24 16.03 1 13.79 1 11.03C1 8.27003 3.24 6.03003 6 6.03003C7 3.68003 9.3 2.03003 12 2.03003C15.43 2.03003 18.24 4.69003 18.5 8.06003L19 8.03003C20.0609 8.03003 21.0783 8.45146 21.8284 9.2016C22.5786 9.95175 23 10.9692 23 12.03C23 14.23 21.21 16.03 19 16.03H18C17.45 16.03 17 15.58 17 15.03C17 14.47 17.45 14.03 18 14.03H19C19.5304 14.03 20.0391 13.8193 20.4142 13.4442C20.7893 13.0692 21 12.5605 21 12.03C21 11.4996 20.7893 10.9909 20.4142 10.6158C20.0391 10.2407 19.5304 10.03 19 10.03H17V9.03003C17 6.27003 14.76 4.03003 12 4.03003C9.5 4.03003 7.45 5.84003 7.06 8.21003C6.73 8.09003 6.37 8.03003 6 8.03003C5.20435 8.03003 4.44129 8.3461 3.87868 8.90871C3.31607 9.47132 3 10.2344 3 11.03C3 11.8257 3.31607 12.5887 3.87868 13.1514C4.44129 13.714 5.20435 14.03 6 14.03ZM12 14.15C12.18 14.39 12.37 14.66 12.56 14.94C13 15.56 14 17.03 14 18C14 19.11 13.1 20 12 20C11.4696 20 10.9609 19.7893 10.5858 19.4142C10.2107 19.0392 10 18.5305 10 18C10 17.03 11 15.56 11.44 14.94C11.63 14.66 11.82 14.4 12 14.15ZM12 11.03L11.5 11.59C11.5 11.59 10.65 12.55 9.79 13.81C8.93 15.06 8 16.56 8 18C8 19.0609 8.42143 20.0783 9.17157 20.8285C9.92172 21.5786 10.9391 22 12 22C13.0609 22 14.0783 21.5786 14.8284 20.8285C15.5786 20.0783 16 19.0609 16 18C16 16.56 15.07 15.06 14.21 13.81C13.35 12.55 12.5 11.59 12.5 11.59" />
+                        </svg>
+
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 19 18"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2 0C0.89 0 0 0.9 0 2V16C0 16.5304 0.210714 17.0391 0.585786 17.4142C0.960859 17.7893 1.46957 18 2 18H16C16.5304 18 17.0391 17.7893 17.4142 17.4142C17.7893 17.0391 18 16.5304 18 16V13.72C18.59 13.37 19 12.74 19 12V6C19 5.26 18.59 4.63 18 4.28V2C18 1.46957 17.7893 0.960859 17.4142 0.585786C17.0391 0.210714 16.5304 0 16 0H2ZM2 2H16V4H10C9.46957 4 8.96086 4.21071 8.58579 4.58579C8.21071 4.96086 8 5.46957 8 6V12C8 12.5304 8.21071 13.0391 8.58579 13.4142C8.96086 13.7893 9.46957 14 10 14H16V16H2V2ZM10 6H17V12H10V6ZM13 7.5C12.6022 7.5 12.2206 7.65804 11.9393 7.93934C11.658 8.22064 11.5 8.60218 11.5 9C11.5 9.39782 11.658 9.77936 11.9393 10.0607C12.2206 10.342 12.6022 10.5 13 10.5C13.3978 10.5 13.7794 10.342 14.0607 10.0607C14.342 9.77936 14.5 9.39782 14.5 9C14.5 8.60218 14.342 8.22064 14.0607 7.93934C13.7794 7.65804 13.3978 7.5 13 7.5Z" />
+                        </svg>
+
+                        <span>Weather Insights</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 19 18"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2 0C0.89 0 0 0.9 0 2V16C0 16.5304 0.210714 17.0391 0.585786 17.4142C0.960859 17.7893 1.46957 18 2 18H16C16.5304 18 17.0391 17.7893 17.4142 17.4142C17.7893 17.0391 18 16.5304 18 16V13.72C18.59 13.37 19 12.74 19 12V6C19 5.26 18.59 4.63 18 4.28V2C18 1.46957 17.7893 0.960859 17.4142 0.585786C17.0391 0.210714 16.5304 0 16 0H2ZM2 2H16V4H10C9.46957 4 8.96086 4.21071 8.58579 4.58579C8.21071 4.96086 8 5.46957 8 6V12C8 12.5304 8.21071 13.0391 8.58579 13.4142C8.96086 13.7893 9.46957 14 10 14H16V16H2V2ZM10 6H17V12H10V6ZM13 7.5C12.6022 7.5 12.2206 7.65804 11.9393 7.93934C11.658 8.22064 11.5 8.60218 11.5 9C11.5 9.39782 11.658 9.77936 11.9393 10.0607C12.2206 10.342 12.6022 10.5 13 10.5C13.3978 10.5 13.7794 10.342 14.0607 10.0607C14.342 9.77936 14.5 9.39782 14.5 9C14.5 8.60218 14.342 8.22064 14.0607 7.93934C13.7794 7.65804 13.3978 7.5 13 7.5Z" />
+                        </svg>
+
+                        <span>Farm input prices </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 22 16"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 0H22V12H4V0ZM13 3C13.7956 3 14.5587 3.31607 15.1213 3.87868C15.6839 4.44129 16 5.20435 16 6C16 6.79565 15.6839 7.55871 15.1213 8.12132C14.5587 8.68393 13.7956 9 13 9C12.2044 9 11.4413 8.68393 10.8787 8.12132C10.3161 7.55871 10 6.79565 10 6C10 5.20435 10.3161 4.44129 10.8787 3.87868C11.4413 3.31607 12.2044 3 13 3ZM8 2C8 2.53043 7.78929 3.03914 7.41421 3.41421C7.03914 3.78929 6.53043 4 6 4V8C6.53043 8 7.03914 8.21071 7.41421 8.58579C7.78929 8.96086 8 9.46957 8 10H18C18 9.46957 18.2107 8.96086 18.5858 8.58579C18.9609 8.21071 19.4696 8 20 8V4C19.4696 4 18.9609 3.78929 18.5858 3.41421C18.2107 3.03914 18 2.53043 18 2H8ZM0 4H2V14H18V16H0V4Z" />
+                        </svg>
+
+                        <span>Profit/Losses </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 18 18"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16V2C18 0.9 17.1 0 16 0ZM16 16H2V2H16V16ZM3.2 4.7H8.2V6.2H3.2V4.7ZM10 12.8H15V14.3H10V12.8ZM10 10.2H15V11.7H10V10.2ZM5 15H6.5V13H8.5V11.5H6.5V9.5H5V11.5H3V13H5V15ZM11.1 7.9L12.5 6.5L13.9 7.9L15 6.9L13.6 5.5L15 4.1L13.9 3L12.5 4.4L11.1 3L10 4.1L11.4 5.5L10 6.9L11.1 7.9Z" />
+                        </svg>
+
+                        <span>Unit cost calculator </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 20 15"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 0H18V3.1C16.96 3.1 16.35 3.72 16.2 3.87L16.19 3.89L16 4.07V4C15.47 4 14.96 3.79 14.59 3.41C14.21 3.04 14 2.53 14 2H4C4 2.53 3.79 3.04 3.41 3.41C3.04 3.79 2.53 4 2 4V8C2.53 8 3.04 8.21 3.41 8.59C3.79 8.96 4 9.47 4 10H10.07L8.07 12H0V0ZM9 3C9.8 3 10.56 3.32 11.12 3.88C11.68 4.44 12 5.2 12 6C12 6.8 11.68 7.56 11.12 8.12C10.56 8.68 9.8 9 9 9C8.2 9 7.44 8.68 6.88 8.12C6.32 7.56 6 6.8 6 6C6 5.2 6.32 4.44 6.88 3.88C7.44 3.32 8.2 3 9 3ZM19.7 6.6L18.4 5.3C18.3 5.2 18.2 5.1 18 5.1C17.8 5.1 17.7 5.2 17.6 5.3L16.6 6.3L18.7 8.4L19.7 7.4C19.9 7.2 19.9 6.8 19.7 6.6ZM12.1 15L18.1 8.9L16.1 6.8L10 12.9V15H12.1Z" />
+                        </svg>
+
+                        <span>Planning and budgeting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 22 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21.9999 2.1V0.3L20.1999 0.0999999C20.0999 0.0999999 19.4999 0 18.4999 0C14.3999 0 11.3999 1.2 9.6999 3.3C8.3999 2.5 6.5999 2 4.4999 2C3.4999 2 2.7999 2.1 2.7999 2.1L0.899902 2.4L0.999902 4.1C1.0999 7.1 2.5999 12.8 7.7999 12.8C7.8999 12.8 7.8999 12.8 7.9999 12.8V16.2C4.1999 16.7 0.999902 18 0.999902 18V20H20.9999V18C20.9999 18 17.7999 16.7 13.9999 16.2V13C20.2999 12.9 21.9999 5.8 21.9999 2.1ZM10.9999 16C10.6999 16 10.2999 16 9.9999 16V10.4C9.9999 10.4 9.7999 7 6.9999 7C6.9999 7 8.4999 7.8 8.8999 10.7C8.4999 10.8 8.0999 10.8 7.7999 10.8C3.1999 10.8 2.9999 4.1 2.9999 4.1C2.9999 4.1 3.5999 4 4.4999 4C6.3999 4 9.4999 4.4 10.3999 7.1C10.8999 2.6 15.9999 2 18.4999 2C19.3999 2 19.9999 2.1 19.9999 2.1C19.9999 2.1 19.9999 11.1 13.6999 11.1C13.4999 11.1 13.1999 11.1 12.9999 11.1C12.9999 9.1 14.9999 6.1 14.9999 6.1C11.9999 7.1 11.9999 11 11.9999 11V16C11.6999 16 11.2999 16 10.9999 16Z" />
+                        </svg>
+
+                        <span>Agriculture advice</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 4H20V16H5.17L4 17.17V4ZM4 2C2.9 2 2.01 2.9 2.01 4L2 22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2H4ZM6 12H14V14H6V12ZM6 9H18V11H6V9ZM6 6H18V8H6V6Z" />
+                        </svg>
+
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+                        <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.4301 12.98C19.4701 12.66 19.5001 12.34 19.5001 12C19.5001 11.66 19.4701 11.34 19.4301 11.02L21.5401 9.37C21.7301 9.22 21.7801 8.95 21.6601 8.73L19.6601 5.27C19.5701 5.11 19.4001 5.02 19.2201 5.02C19.1601 5.02 19.1001 5.03 19.0501 5.05L16.5601 6.05C16.0401 5.65 15.4801 5.32 14.8701 5.07L14.4901 2.42C14.4601 2.18 14.2501 2 14.0001 2H10.0001C9.75008 2 9.54008 2.18 9.51008 2.42L9.13008 5.07C8.52008 5.32 7.96008 5.66 7.44008 6.05L4.95008 5.05C4.89008 5.03 4.83008 5.02 4.77008 5.02C4.60008 5.02 4.43008 5.11 4.34008 5.27L2.34008 8.73C2.21008 8.95 2.27008 9.22 2.46008 9.37L4.57008 11.02C4.53008 11.34 4.50008 11.67 4.50008 12C4.50008 12.33 4.53008 12.66 4.57008 12.98L2.46008 14.63C2.27008 14.78 2.22008 15.05 2.34008 15.27L4.34008 18.73C4.43008 18.89 4.60008 18.98 4.78008 18.98C4.84008 18.98 4.90008 18.97 4.95008 18.95L7.44008 17.95C7.96008 18.35 8.52008 18.68 9.13008 18.93L9.51008 21.58C9.54008 21.82 9.75008 22 10.0001 22H14.0001C14.2501 22 14.4601 21.82 14.4901 21.58L14.8701 18.93C15.4801 18.68 16.0401 18.34 16.5601 17.95L19.0501 18.95C19.1101 18.97 19.1701 18.98 19.2301 18.98C19.4001 18.98 19.5701 18.89 19.6601 18.73L21.6601 15.27C21.7801 15.05 21.7301 14.78 21.5401 14.63L19.4301 12.98ZM17.4501 11.27C17.4901 11.58 17.5001 11.79 17.5001 12C17.5001 12.21 17.4801 12.43 17.4501 12.73L17.3101 13.86L18.2001 14.56L19.2801 15.4L18.5801 16.61L17.3101 16.1L16.2701 15.68L15.3701 16.36C14.9401 16.68 14.5301 16.92 14.1201 17.09L13.0601 17.52L12.9001 18.65L12.7001 20H11.3001L11.1101 18.65L10.9501 17.52L9.89008 17.09C9.46008 16.91 9.06008 16.68 8.66008 16.38L7.75008 15.68L6.69008 16.11L5.42008 16.62L4.72008 15.41L5.80008 14.57L6.69008 13.87L6.55008 12.74C6.52008 12.43 6.50008 12.2 6.50008 12C6.50008 11.8 6.52008 11.57 6.55008 11.27L6.69008 10.14L5.80008 9.44L4.72008 8.6L5.42008 7.39L6.69008 7.9L7.73008 8.32L8.63008 7.64C9.06008 7.32 9.47008 7.08 9.88008 6.91L10.9401 6.48L11.1001 5.35L11.3001 4H12.6901L12.8801 5.35L13.0401 6.48L14.1001 6.91C14.5301 7.09 14.9301 7.32 15.3301 7.62L16.2401 8.32L17.3001 7.89L18.5701 7.38L19.2701 8.59L18.2001 9.44L17.3101 10.14L17.4501 11.27ZM12.0001 8C9.79008 8 8.00008 9.79 8.00008 12C8.00008 14.21 9.79008 16 12.0001 16C14.2101 16 16.0001 14.21 16.0001 12C16.0001 9.79 14.2101 8 12.0001 8ZM12.0001 14C10.9001 14 10.0001 13.1 10.0001 12C10.0001 10.9 10.9001 10 12.0001 10C13.1001 10 14.0001 10.9 14.0001 12C14.0001 13.1 13.1001 14 12.0001 14Z" />
+                        </svg>
+
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="h-full px-5 lg:pr-0 lg:pl-8 overflow-y-auto">
+            <div class="hidden lg:block pt-6 px-4">
+                <div class="flex justify-end items-center">
+                    <div class="pr-20 flex items-center gap-3">
+                        <img class="rounded-full" src="/public/images/user.png" width="42" height="42" alt="Brian" />
+                        <span class="font-medium text-base font-poppins pr-7 text-tertiary">Brian</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pl-8 pr-3.5">
+                    <hr class="border-transparent border-0 h-px bg-gray-4" />
+                </div>
+            </div>
+
+            <!-- ADD CONTENT HERE -->
+
+            <section>
+                <h4 class="text-[#334C36]  font-Poppins font-medium text-[24px] leading-normal tracking-[0.1px] ">
+                    Settings</h4>
+                <!-- Navigation Bar -->
+                <nav class="">
+                    <div class="max-w-6xl mx-auto px-4">
+                        <div class="flex justify-between">
+                            <div class="flex space-x-4">
+                                <!-- Primary Nav -->
+                                <div class="flex items-center space-x-1">
+                                    <a href="#"
+                                        class="py-3.5 px-3 text-primary border-b-4 border-primary font-semibold">Profile
+                                        Settings</a>
+                                    <a href="#"
+                                        class="py-3.5 px-3 text-[#49454F] hover:text-primary hover:border-primary transition duration-300 ease-in-out">Password
+                                        And Security</a>
+                                    <a href="#"
+                                        class="py-3.5 px-3 text-[#49454F] hover:text-primary hover:border-primary transition duration-300 ease-in-out">Farm
+                                        Management</a>
+                                    <a href="#"
+                                        class="py-3.5 px-3 text-[#49454F] hover:text-primary hover:border-primary transition duration-300 ease-in-out">Help
+                                        And Support</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="tab-1 pt-[32px] px-4 hidden">
+                    <div class="flex flex-col">
+                        <div class="">
+
+                            <p class="font-medium text-base mb-2 text-[#4C535F] font-Manrope">Your Profile Picture</p>
+                            <label for="upload"
+                                class="relative w-[130px] mb-[32px] flex flex-col items-center justify-center h-[132px] rounded-[18px] border border-dashed border-[#4C535F] bg-[#EDF2F6]">
+                                <input type="file" name="upload" id="upload" class="opacity-0 absolute" id="">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.99994 7.75839C10.74 7.26392 11.61 7 12.5 7C13.0714 7 13.5346 7.46322 13.5346 8.03464C13.5346 8.60606 13.0714 9.06928 12.5 9.06928C12.0193 9.06928 11.5493 9.21184 11.1496 9.47893C10.7498 9.74602 10.4383 10.1256 10.2543 10.5698C10.0703 11.014 10.0222 11.5027 10.116 11.9742C10.2098 12.4457 10.4413 12.8788 10.7812 13.2188C11.1212 13.5587 11.5543 13.7902 12.0258 13.884C12.4973 13.9778 12.986 13.9297 13.4302 13.7457C13.8744 13.5617 14.254 13.2502 14.5211 12.8504C14.7882 12.4507 14.9307 11.9807 14.9307 11.5C14.9307 10.9286 15.3939 10.4654 15.9654 10.4654C16.5368 10.4654 17 10.9286 17 11.5C17 12.39 16.7361 13.26 16.2416 14.0001C15.7471 14.7401 15.0443 15.3169 14.2221 15.6575C13.3998 15.998 12.495 16.0872 11.6221 15.9135C10.7492 15.7399 9.94736 15.3113 9.31802 14.682C8.68868 14.0526 8.2601 13.2508 8.08647 12.3779C7.91283 11.505 8.00195 10.6002 8.34254 9.77792C8.68314 8.95566 9.25991 8.25285 9.99994 7.75839Z"
+                                        fill="#8D98AA" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M34.9802 13C35.5434 13 36 13.4661 36 14.041V22.7574C36 27.2164 35.1375 30.6085 32.9439 32.8604C30.7489 35.1136 27.4407 36 23.094 36H12.906C8.56063 36 5.25258 35.114 3.05723 32.861C0.863226 30.6094 0 27.2173 0 22.7574V19.2528C0 18.6779 0.456559 18.2118 1.01975 18.2118C1.58295 18.2118 2.03951 18.6779 2.03951 19.2528V22.7574C2.03951 27.014 2.87587 29.7227 4.50321 31.3928C6.12922 33.0615 8.76429 33.9181 12.906 33.9181H23.094C27.2371 33.9181 29.8721 33.0611 31.4977 31.3923C33.1248 29.7221 33.9605 27.0134 33.9605 22.7574V14.041C33.9605 13.4661 34.4171 13 34.9802 13Z"
+                                        fill="#8D98AA" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M3.09967 3.07527C5.32422 0.868234 8.6763 0 13.0827 0H19.9716C20.5396 0 21 0.456808 21 1.02031C21 1.58381 20.5396 2.04062 19.9716 2.04062H13.0827C8.87924 2.04062 6.20419 2.88106 4.55405 4.51821C2.90392 6.15535 2.05681 8.80935 2.05681 12.9797C2.05681 13.5432 1.59638 14 1.0284 14C0.460432 14 0 13.5432 0 12.9797C0 8.60801 0.875122 5.28231 3.09967 3.07527Z"
+                                        fill="#8D98AA" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23 6C23 5.44772 23.4792 5 24.0704 5H33.9296C34.5208 5 35 5.44772 35 6C35 6.55228 34.5208 7 33.9296 7H24.0704C23.4792 7 23 6.55228 23 6Z"
+                                        fill="#8D98AA" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M29 0C29.5523 0 30 0.479239 30 1.07041V10.9296C30 11.5208 29.5523 12 29 12C28.4477 12 28 11.5208 28 10.9296V1.07041C28 0.479239 28.4477 0 29 0Z"
+                                        fill="#8D98AA" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M28.0496 19.675L20.9723 25.8014L20.9535 25.8173C20.0931 26.5267 19.0135 26.9145 17.8993 26.9145C16.7851 26.9145 15.7055 26.5267 14.8451 25.8173C14.8358 25.8096 14.8267 25.8018 14.8177 25.7939L14.2713 25.3101C13.8139 24.941 13.2519 24.7253 12.6651 24.694C12.0746 24.6624 11.4894 24.8191 10.9934 25.1414L2.59721 30.8241C2.12855 31.1413 1.49204 31.0177 1.17551 30.5481C0.858988 30.0784 0.982315 29.4405 1.45097 29.1233L9.86814 23.4264C10.7295 22.8634 11.7473 22.5897 12.7741 22.6445C13.801 22.6994 14.7839 23.0802 15.5806 23.7318C15.5909 23.7402 15.6011 23.7489 15.6111 23.7578L16.1591 24.2429C16.6508 24.6434 17.2653 24.8622 17.8993 24.8622C18.5351 24.8622 19.1512 24.6422 19.6436 24.2396L26.7209 18.1131L26.7397 18.0972C27.6002 17.3878 28.6797 17 29.7939 17C30.9081 17 31.9877 17.3878 32.8481 18.0972L32.867 18.1132L35.6454 20.5185C36.0734 20.889 36.1206 21.537 35.7509 21.9659C35.3812 22.3947 34.7345 22.4421 34.3066 22.0716L31.5382 19.6749C31.0458 19.2723 30.4297 19.0523 29.7939 19.0523C29.1582 19.0523 28.5421 19.2723 28.0496 19.675Z"
+                                        fill="#8D98AA" />
+                                </svg>
+
+                                <p class="text-center">Upload your photo</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+
+                        <div class=" w-full mb-4">
+                            <input id="full_name" name="full_name" placeholder="Full Name " type="text"
+                                autocomplete="full_name" required
+                                class="block rounded-[6px] border border-[#D9D9D9]
+                   bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+
+                        <div class="">
+                            <div class=" w-full mb-4">
+                                <input id="email" name="email" placeholder="Email " type="text" autocomplete="email"
+                                    required
+                                    class="block rounded-[6px] border border-[#D9D9D9]
+                       bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class=" w-full mb-4">
+                                <input id="phone_number" name="phone_number" placeholder="Phone number  " type="text"
+                                    autocomplete="Phone" required
+                                    class="block rounded-[6px] border border-[#D9D9D9]
+                       bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class=" w-full mb-4">
+                                <input id="role" name="role" placeholder="Role  " type="text" autocomplete="role"
+                                    required
+                                    class="block rounded-[6px] border border-[#D9D9D9]
+                       bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="col-span-2">
+                            <div class=" w-full mb-4">
+                                <textarea id="role" name="role" placeholder="Role  " type="text" autocomplete="role"
+                                    required class="block rounded-[6px] border border-[#D9D9D9]
+                       bg-[#FAFDFF] w-full h-32  py-3 shadow-sm ring-1 ring-inset
+                        ring-gray-300 placeholder:text-gray-400 focus:ring-2 
+                        focus:ring-inset focus:ring-indigo-600 sm:text-sm 
+                        sm:leading-6">Bio</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex w-full justify-end gap-4 items-center">
+                        <button
+                            class="px-4 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">RESET</button>
+                        <button
+                            class="px-4 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">RESET</button>
+                    </div>
+
+                </div>
+
+                <div class="tab-2 pt-[32px] px-4 space-y-4  hidden">
+                    <div class="flex flex-col">
+                        <p class="font-medium text-base mb-2 text-[#4C535F] font-Manrope">Change Password</p>
+                    </div>
+
+                    <div class="">
+                        <input id="password" name="old_password" placeholder="Old password  " type="password"
+                            autocomplete="email" required
+                            class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+
+                    <div class="">
+                        <input id="password" name="old_password" placeholder="New password" type="password"
+                            autocomplete="password" required
+                            class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+
+                    <div>
+                        <button type="submit" disabled
+                            class="bg-[#BFBFD9] w-full  rounded-md  flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase">Login</button>
+                    </div>
+
+
+                    <div class="">
+
+                        <a href="" class="underline font-semibold text-sm font-Poppins text-[#FF5151]">Change Email</a>
+                    </div>
+                </div>
+
+                <div class="tab-3 pt-[32px] px-4 py-4 hidden">
+                    <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">Farm
+                        Details</h4>
+                    <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                        <div class="">
+
+
+                            <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Farm 1</h4>
+
+                            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">10 ha</p>
+                            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">Crop cultivation: Maize
+                            </p>
+                        </div>
+
+                        <div class="flex items-center">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
+                                    fill="#1C1C1C" />
+                            </svg>
+
+                            <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                        <div class="">
+
+
+                            <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Farm 1</h4>
+
+                            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">10 ha</p>
+                            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">Crop cultivation: Maize
+                            </p>
+                        </div>
+
+                        <div class="flex items-center">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
+                                    fill="#1C1C1C" />
+                            </svg>
+
+                            <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                        <div class="">
+
+
+                            <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Farm 1</h4>
+
+                            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">10 ha</p>
+                            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">Crop cultivation: Maize
+                            </p>
+                        </div>
+
+                        <div class="flex items-center">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
+                                    fill="#1C1C1C" />
+                            </svg>
+
+                            <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
+                        </div>
+                    </div>
+
+                    <div class="flex w-full justify-end gap-4 items-center mt-6">
+                        <button
+                            class="px-6 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">EDIT</button>
+                        <button
+                            class="px-6 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">ADD
+                            FARM</button>
+                    </div>
+
+                    <div class="seasonal-calender">
+                        <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">
+                            Seasonal Calendar </h4>
+
+                        <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                            <div class="">
+                                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
+                                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
+                                    June 2024</p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                            <div class="">
+                                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
+                                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
+                                    June 2024</p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                            <div class="">
+                                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
+                                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
+                                    June 2024</p>
+                            </div>
+
+                        </div>
+                        <div class="flex w-full justify-end gap-4 items-center mt-6">
+                            <button
+                                class="px-6 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">EDIT</button>
+                            <button
+                                class="px-6 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">ADD
+                                PERIOD</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-4 pt-[32px] px-4 py-4">
+                    <div class="space-y-2">
+
+                        <h5 class="text-[#1C1C1C] text-base font-medium font-Poppins">Need help? Contact us</h5>
+
+                        <p class="text-sm font-Poppins leading-[20px] text-[#1C1C1C] tracking-[0.25px]">We’d love to
+                            hear your thoughts on this platform</p>
+
+                        <div class="">
+                            <a href=""
+                            
+                                class="underline font-semibold text-sm font-Poppins text-primary uppercase">CONTACT
+                                US</a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-col mt-7 gap-4">
+                        <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">PRIVACY
+                            POLICY</a>
+                        <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">TERMS AND
+                            CONDITIONS</a>
+                    </div>
+
+                </div>
     </div>
-  </nav>
-
-  <div class="tab-1 pt-[32px] px-4 hidden">
-    <div class="flex flex-col">
-        <div class="">
-
-            <p class="font-medium text-base mb-2 text-[#4C535F] font-Manrope">Your Profile  Picture</p>
-            <label for="upload" class="relative w-[130px] mb-[32px] flex flex-col items-center justify-center h-[132px] rounded-[18px] border border-dashed border-[#4C535F] bg-[#EDF2F6]">
-                 <input type="file" name="upload" id="upload" class="opacity-0 absolute" id="">
-
-                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99994 7.75839C10.74 7.26392 11.61 7 12.5 7C13.0714 7 13.5346 7.46322 13.5346 8.03464C13.5346 8.60606 13.0714 9.06928 12.5 9.06928C12.0193 9.06928 11.5493 9.21184 11.1496 9.47893C10.7498 9.74602 10.4383 10.1256 10.2543 10.5698C10.0703 11.014 10.0222 11.5027 10.116 11.9742C10.2098 12.4457 10.4413 12.8788 10.7812 13.2188C11.1212 13.5587 11.5543 13.7902 12.0258 13.884C12.4973 13.9778 12.986 13.9297 13.4302 13.7457C13.8744 13.5617 14.254 13.2502 14.5211 12.8504C14.7882 12.4507 14.9307 11.9807 14.9307 11.5C14.9307 10.9286 15.3939 10.4654 15.9654 10.4654C16.5368 10.4654 17 10.9286 17 11.5C17 12.39 16.7361 13.26 16.2416 14.0001C15.7471 14.7401 15.0443 15.3169 14.2221 15.6575C13.3998 15.998 12.495 16.0872 11.6221 15.9135C10.7492 15.7399 9.94736 15.3113 9.31802 14.682C8.68868 14.0526 8.2601 13.2508 8.08647 12.3779C7.91283 11.505 8.00195 10.6002 8.34254 9.77792C8.68314 8.95566 9.25991 8.25285 9.99994 7.75839Z" fill="#8D98AA"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M34.9802 13C35.5434 13 36 13.4661 36 14.041V22.7574C36 27.2164 35.1375 30.6085 32.9439 32.8604C30.7489 35.1136 27.4407 36 23.094 36H12.906C8.56063 36 5.25258 35.114 3.05723 32.861C0.863226 30.6094 0 27.2173 0 22.7574V19.2528C0 18.6779 0.456559 18.2118 1.01975 18.2118C1.58295 18.2118 2.03951 18.6779 2.03951 19.2528V22.7574C2.03951 27.014 2.87587 29.7227 4.50321 31.3928C6.12922 33.0615 8.76429 33.9181 12.906 33.9181H23.094C27.2371 33.9181 29.8721 33.0611 31.4977 31.3923C33.1248 29.7221 33.9605 27.0134 33.9605 22.7574V14.041C33.9605 13.4661 34.4171 13 34.9802 13Z" fill="#8D98AA"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.09967 3.07527C5.32422 0.868234 8.6763 0 13.0827 0H19.9716C20.5396 0 21 0.456808 21 1.02031C21 1.58381 20.5396 2.04062 19.9716 2.04062H13.0827C8.87924 2.04062 6.20419 2.88106 4.55405 4.51821C2.90392 6.15535 2.05681 8.80935 2.05681 12.9797C2.05681 13.5432 1.59638 14 1.0284 14C0.460432 14 0 13.5432 0 12.9797C0 8.60801 0.875122 5.28231 3.09967 3.07527Z" fill="#8D98AA"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23 6C23 5.44772 23.4792 5 24.0704 5H33.9296C34.5208 5 35 5.44772 35 6C35 6.55228 34.5208 7 33.9296 7H24.0704C23.4792 7 23 6.55228 23 6Z" fill="#8D98AA"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29 0C29.5523 0 30 0.479239 30 1.07041V10.9296C30 11.5208 29.5523 12 29 12C28.4477 12 28 11.5208 28 10.9296V1.07041C28 0.479239 28.4477 0 29 0Z" fill="#8D98AA"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.0496 19.675L20.9723 25.8014L20.9535 25.8173C20.0931 26.5267 19.0135 26.9145 17.8993 26.9145C16.7851 26.9145 15.7055 26.5267 14.8451 25.8173C14.8358 25.8096 14.8267 25.8018 14.8177 25.7939L14.2713 25.3101C13.8139 24.941 13.2519 24.7253 12.6651 24.694C12.0746 24.6624 11.4894 24.8191 10.9934 25.1414L2.59721 30.8241C2.12855 31.1413 1.49204 31.0177 1.17551 30.5481C0.858988 30.0784 0.982315 29.4405 1.45097 29.1233L9.86814 23.4264C10.7295 22.8634 11.7473 22.5897 12.7741 22.6445C13.801 22.6994 14.7839 23.0802 15.5806 23.7318C15.5909 23.7402 15.6011 23.7489 15.6111 23.7578L16.1591 24.2429C16.6508 24.6434 17.2653 24.8622 17.8993 24.8622C18.5351 24.8622 19.1512 24.6422 19.6436 24.2396L26.7209 18.1131L26.7397 18.0972C27.6002 17.3878 28.6797 17 29.7939 17C30.9081 17 31.9877 17.3878 32.8481 18.0972L32.867 18.1132L35.6454 20.5185C36.0734 20.889 36.1206 21.537 35.7509 21.9659C35.3812 22.3947 34.7345 22.4421 34.3066 22.0716L31.5382 19.6749C31.0458 19.2723 30.4297 19.0523 29.7939 19.0523C29.1582 19.0523 28.5421 19.2723 28.0496 19.675Z" fill="#8D98AA"/>
-                  </svg>
-
-                  <p class="text-center">Upload your photo</p>
-            </label>
-        </div>
+    </section>
+        </main>
     </div>
 
-<div class="grid grid-cols-2 gap-4">
-
-    <div class=" w-full mb-4">
-        <input id="full_name" name="full_name"
-        placeholder="Full Name "
-         type="text" autocomplete="full_name" required
-          class="block rounded-[6px] border border-[#D9D9D9]
-           bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-      </div>
-
-      <div class="">
-        <div class=" w-full mb-4">
-            <input id="email" name="email"
-            placeholder="Email "
-             type="text" autocomplete="email" required
-              class="block rounded-[6px] border border-[#D9D9D9]
-               bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-    </div>
-
-    <div class="">
-        <div class=" w-full mb-4">
-            <input id="phone_number" name="phone_number"
-            placeholder="Phone number  "
-             type="text" autocomplete="Phone" required
-              class="block rounded-[6px] border border-[#D9D9D9]
-               bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-    </div>
-
-    <div class="">
-        <div class=" w-full mb-4">
-            <input id="role" name="role"
-            placeholder="Role  "
-             type="text" autocomplete="role" required
-              class="block rounded-[6px] border border-[#D9D9D9]
-               bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-    </div>
-
-    <div class="col-span-2">
-        <div class=" w-full mb-4">
-            <textarea id="role" name="role"
-            placeholder="Role  "
-             type="text" autocomplete="role" required
-              class="block rounded-[6px] border border-[#D9D9D9]
-               bg-[#FAFDFF] w-full h-32  py-3 shadow-sm ring-1 ring-inset
-                ring-gray-300 placeholder:text-gray-400 focus:ring-2 
-                focus:ring-inset focus:ring-indigo-600 sm:text-sm 
-                sm:leading-6" >Bio</textarea>
-          </div>
-    </div>
-
-</div>
-
-
-<div class="flex w-full justify-end gap-4 items-center">
-    <button class="px-4 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">RESET</button>
-    <button class="px-4 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">RESET</button>
-</div>
-
-</div>
-
-<div class="tab-2 pt-[32px] px-4 space-y-4  hidden">
-    <div class="flex flex-col">
-        <p class="font-medium text-base mb-2 text-[#4C535F] font-Manrope">Change Password</p>
-    </div>
-
-    <div class="">
-        <input id="password" name="old_password"
-        placeholder="Old password  "
-         type="password" autocomplete="email" required
-          class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-    </div>
-  
-    <div class="">
-        <input id="password" name="old_password"
-        placeholder="New password"
-         type="password" autocomplete="password" required
-          class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-    </div>
-
-    <div>
-        <button type="submit" 
-        disabled
-        class="bg-[#BFBFD9] w-full  rounded-md  flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase">Login</button>
-      </div>
-
-
-      <div class="">
-
-        <a href="" class="underline font-semibold text-sm font-Poppins text-[#FF5151]">Change Email</a>
-      </div>
-</div>
-
-<div class="tab-3 pt-[32px] px-4 py-4 hidden">
-    <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">Farm Details</h4>
-<div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-    <div class="">
-
-
-        <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Farm 1</h4>
-
-        <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">10 ha</p>
-        <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">Crop cultivation: Maize </p>
-    </div>
-
-    <div class="flex items-center">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z" fill="#1C1C1C"/>
-            </svg>
-
-            <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
-    </div>
-</div>
-
-<div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-    <div class="">
-
-
-        <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Farm 1</h4>
-
-        <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">10 ha</p>
-        <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">Crop cultivation: Maize </p>
-    </div>
-
-    <div class="flex items-center">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z" fill="#1C1C1C"/>
-            </svg>
-
-            <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
-    </div>
-</div>
-
-<div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-    <div class="">
-
-
-        <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Farm 1</h4>
-
-        <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">10 ha</p>
-        <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">Crop cultivation: Maize </p>
-    </div>
-
-    <div class="flex items-center">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z" fill="#1C1C1C"/>
-            </svg>
-
-            <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
-    </div>
-</div>
-
-<div class="flex w-full justify-end gap-4 items-center mt-6">
-    <button class="px-6 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">EDIT</button>
-    <button class="px-6 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">ADD FARM</button>
-</div>
-
-<div class="seasonal-calender">
-    <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">Seasonal Calendar </h4>
-
-    <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-        <div class="">
-            <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
-            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st June 2024</p>  
-        </div>
-
-    </div>
-
-    <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-        <div class="">
-            <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
-            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st June 2024</p>  
-        </div>
-
-    </div>
-
-    <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-        <div class="">
-            <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
-            <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st June 2024</p>  
-        </div>
-
-    </div>
-    <div class="flex w-full justify-end gap-4 items-center mt-6">
-        <button class="px-6 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">EDIT</button>
-        <button class="px-6 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">ADD PERIOD</button>
-    </div>
-
-</div>
-</div>
-
-<div class="tab-4 pt-[32px] px-4 py-4">
-    <div class="space-y-2">
-
-        <h5 class="text-[#1C1C1C] text-base font-medium font-Poppins">Need help? Contact us</h5>
-  
-        <p class="text-sm font-Poppins leading-[20px] text-[#1C1C1C] tracking-[0.25px]">We’d love to hear your thoughts on this platform</p>
-
-<div class="">
-    <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">CONTACT US</a>
-</div>
-       
-    </div>
-
-
-    <div class="flex flex-col mt-7 gap-4">
-        <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">PRIVACY POLICY</a>
-        <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">TERMS AND CONDITIONS</a>
-    </div>
-
-</div>
-  </div>
-   </main>
+    <script src="./index.js" defer></script>
 </body>
+
 </html>
+
