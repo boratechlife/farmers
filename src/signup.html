@@ -6,12 +6,12 @@
   <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body class="flex">
-<div class=" flex items-center w-full">
+<div class=" flex items-center flex-wrap lg:flex-nowrap w-full">
   <div class="w-full lg:w-1/2 flex ">
     <img src="./loginImage.png" class="w-full  h-screen object-top object-cover" alt="">
   </div>
 
-  <div class="w-full md:w-1/2 flex  items-center flex-col justify-center relative">
+  <div class="w-full lg:w-1/2 flex  items-center flex-col justify-center relative">
     <!-- TOP START -->
     <div class="absolute top-0 left-4">
       <img src="./images/login-star.png" class="w-[77px] h-[69px] object-fit" alt="">
@@ -20,7 +20,7 @@
         <div class="absolute -bottom-12 right-40">
           <img src="./images/login-star.png" class="w-[77px] h-[69px] object-fit" alt="">
         </div>
-    <div class="w-2/5 flex flex-col items-center justify-center">
+    <div class="w-full lg:w-2/5 px-4 flex flex-col items-center justify-center">
       <div class="mb-4">
         <img src="./logo.png" class="w-[160px] h-[55px] object-fit" alt="">
       </div>
@@ -66,8 +66,12 @@
   
 
       <div>
-        <button type="submit" 
-        class="bg-primary w-full  rounded-md  flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase">Create Account</button>
+        <a type="submit" 
+        href="signup_step_2.html"
+        class="bg-primary w-full  rounded-md  flex px-[10px] py-3 
+        justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] 
+        font-Poppins text-[16px] font-bold leading-[24px] uppercase">Create Account
+      </a>
       </div>
 
 

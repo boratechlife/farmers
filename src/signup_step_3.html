@@ -6,7 +6,7 @@
   <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body class="flex">
-<div class=" flex items-center w-full">
+<div class=" flex flex-wrap lg:flex-nowrap items-center w-full">
   <div class="w-full lg:w-1/2 flex ">
     <img src="./loginImage.png" class="w-full  h-screen object-top object-cover" alt="">
   </div>
@@ -20,7 +20,7 @@
         <div class="absolute -bottom-28 right-40">
           <img src="./images/login-star.png" class="w-[77px] h-[69px] object-fit" alt="">
         </div>
-    <div class="w-3/4 flex flex-col items-center justify-center">
+    <div class="w-full lg:w-3/4 px-4 flex flex-col items-center justify-center">
       <div class="mb-4">
         <img src="./logo.png" class="w-[160px] h-[55px] object-fit" alt="">
       </div>
@@ -43,20 +43,20 @@
               <span class="sr-only">Create account</span>
             </a>
 
-            <h4 class="absolute -bottom-7 -left-10 text-secondary font-Poppins text-base font-medium leading-[20px] tracking-[0.1px]">Create account</h4>
+            <h4 class="absolute -bottom-14 lg:-bottom-7 w-1/4 lg:w-auto lg:-left-10 text-secondary font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]">Create account</h4>
           </li>
    
           <li class="relative w-1/2 pr-8 sm:pr-20">
             <!-- Completed Step -->
             <div class="absolute inset-0 flex items-center" aria-hidden="true">
-              <div class="h-0.5 w-full bg-[#8C8C8C]"></div>
+              <div class="h-0.5 w-full bg-secondary"></div>
             </div>
             <a href="#" class="relative flex h-8 w-8 items-center justify-center rounded-full bg-secondary">
 <span class="text-white">2</span>
               <span class="sr-only">Professional Details</span>
             </a>
 
-            <h4 class="absolute -bottom-7 -left-10 text-secondary font-Poppins text-base font-medium leading-[20px] tracking-[0.1px]">Professional Details</h4>
+            <h4 class="absolute -bottom-14 text-center lg:-bottom-7 w-1/4 lg:w-auto -left-10 lg:-left-10 text-secondary font-Poppins txt-base  lg:text-base font-medium leading-[20px] tracking-[0.1px]">Professional Details</h4>
           </li>
 
           <li class="relative ">
@@ -64,11 +64,11 @@
             <div class="absolute inset-0 flex items-center" aria-hidden="true">
               <div class="h-0.5 w-full bg-[#8C8C8C]"></div>
             </div>
-            <a href="#" class="group relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-secondary bg-secondary text-white">
+            <a href="#" class="group relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#8C8C8C] bg-[#8C8C8C] text-white">
               <span class="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-[#8C8C8C] flex items-center justify-center" aria-hidden="true">3</span>
               <span class="sr-only">More details </span>
             </a>
-            <h4 class="absolute -bottom-7 -left-10 whitespace-nowrap text-[#8C8C8C] font-Poppins text-base font-medium leading-[20px] tracking-[0.1px]">More details </h4>
+            <h4 class="absolute -bottom-14 lg:-bottom-7 w-1/4 lg:w-auto -left-3 text-center lg:-left-10 lg:whitespace-nowrap text-[#8C8C8C] font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]">More details </h4>
           </li>
         </ol>
       </nav>
@@ -100,8 +100,9 @@
 
 
     <div>
-      <button type="submit" 
-      class="bg-primary w-full  rounded-md  flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase">Login</button>
+      <a type="submit" 
+      href="/src/index.html"
+      class="bg-primary w-full  rounded-md  flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase">Login</a>
     </div>
   </div>
     </div>
