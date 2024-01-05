@@ -1361,6 +1361,11 @@ select{
   width: 100%;
 }
 
+.min-w-max{
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
 .max-w-6xl{
   max-width: 72rem;
 }
@@ -1748,6 +1753,10 @@ select{
 
 .border-transparent{
   border-color: transparent;
+}
+
+.border-gray-1\/10{
+  border-color: rgb(140 140 140 / 0.1);
 }
 
 .bg-\[\#474554\]{
@@ -2662,6 +2671,10 @@ select{
   height: 110px;
 }
 
+.\*\:h-\[120px\] > *{
+  height: 120px;
+}
+
 .\*\:w-10 > *{
   width: 2.5rem;
 }
@@ -3046,6 +3059,10 @@ select{
 
   .lg\:border-r-\[\.1px\]{
     border-right-width: .1px;
+  }
+
+  .lg\:border-r-\[0\.1px\]{
+    border-right-width: 0.1px;
   }
 
   .lg\:px-10{
