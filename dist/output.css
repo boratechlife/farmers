@@ -2101,6 +2101,11 @@ select{
   padding-bottom: 9px;
 }
 
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pb-10{
   padding-bottom: 2.5rem;
 }
@@ -3035,6 +3040,10 @@ select{
     height: 100%;
   }
 
+  .lg\:h-\[400px\]{
+    height: 400px;
+  }
+
   .lg\:w-1\/2{
     width: 50%;
   }
@@ -3067,6 +3076,10 @@ select{
     width: 100%;
   }
 
+  .lg\:w-\[420px\]{
+    width: 420px;
+  }
+
   .lg\:max-w-full{
     max-width: 100%;
   }
@@ -3087,6 +3100,10 @@ select{
     flex-wrap: nowrap;
   }
 
+  .lg\:items-center{
+    align-items: center;
+  }
+
   .lg\:justify-normal{
     justify-content: normal;
   }
@@ -3095,12 +3112,24 @@ select{
     justify-content: flex-start;
   }
 
+  .lg\:justify-center{
+    justify-content: center;
+  }
+
   .lg\:whitespace-nowrap{
     white-space: nowrap;
   }
 
   .lg\:border-r-\[0\.1px\]{
     border-right-width: 0.1px;
+  }
+
+  .lg\:bg-opacity-90{
+    --tw-bg-opacity: 0.9;
+  }
+
+  .lg\:p-8{
+    padding: 2rem;
   }
 
   .lg\:px-10{
@@ -3160,6 +3189,14 @@ select{
   .lg\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-\[24px\]{
+    font-size: 24px;
+  }
+
+  .lg\:text-\[18px\]{
+    font-size: 18px;
   }
 
   .lg\:leading-\[42px\]{
