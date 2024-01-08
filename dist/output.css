@@ -1021,6 +1021,10 @@ select{
   margin-top: 44px;
 }
 
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
 .block{
   display: block;
 }
@@ -1213,6 +1217,10 @@ select{
   width: 50%;
 }
 
+.w-1\/3{
+  width: 33.333333%;
+}
+
 .w-1\/4{
   width: 25%;
 }
@@ -1361,10 +1369,6 @@ select{
   width: 100%;
 }
 
-.w-1\/3{
-  width: 33.333333%;
-}
-
 .min-w-max{
   min-width: -moz-max-content;
   min-width: max-content;
@@ -1397,21 +1401,6 @@ select{
 
 .translate-x-1\/2{
   --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-10{
-  --tw-translate-x: 2.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-12{
-  --tw-translate-x: 3rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-14{
-  --tw-translate-x: 3.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2097,6 +2086,11 @@ select{
   padding-bottom: 10px;
 }
 
+.py-\[12\.5px\]{
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
+}
+
 .py-\[6px\]{
   padding-top: 6px;
   padding-bottom: 6px;
@@ -2117,10 +2111,6 @@ select{
 
 .pb-6{
   padding-bottom: 1.5rem;
-}
-
-.pl-10{
-  padding-left: 2.5rem;
 }
 
 .pl-2{
@@ -2149,6 +2139,10 @@ select{
 
 .pl-8{
   padding-left: 2rem;
+}
+
+.pl-\[3px\]{
+  padding-left: 3px;
 }
 
 .pr-10{
@@ -2187,6 +2181,10 @@ select{
   padding-top: 0.75rem;
 }
 
+.pt-4{
+  padding-top: 1rem;
+}
+
 .pt-5{
   padding-top: 1.25rem;
 }
@@ -2199,24 +2197,8 @@ select{
   padding-top: 32px;
 }
 
-.pt-4{
-  padding-top: 1rem;
-}
-
-.pl-1{
-  padding-left: 0.25rem;
-}
-
-.pl-\[2px\]{
-  padding-left: 2px;
-}
-
-.pl-\[3px\]{
-  padding-left: 3px;
-}
-
-.pl-20{
-  padding-left: 5rem;
+.pb-20{
+  padding-bottom: 5rem;
 }
 
 .text-center{
@@ -2753,6 +2735,11 @@ select{
   padding-right: 0.5rem;
 }
 
+.\*\:px-3 > *{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .\*\:px-4 > *{
   padding-left: 1rem;
   padding-right: 1rem;
@@ -2796,11 +2783,6 @@ select{
 .\*\:py-8 > *{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.\*\:px-3 > *{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .\*\:pl-6 > *{
@@ -3013,6 +2995,10 @@ select{
     margin-top: 2rem;
   }
 
+  .lg\:mb-5{
+    margin-bottom: 1.25rem;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -3035,6 +3021,10 @@ select{
 
   .lg\:hidden{
     display: none;
+  }
+
+  .lg\:h-\[55px\]{
+    height: 55px;
   }
 
   .lg\:h-auto{
@@ -3065,6 +3055,10 @@ select{
     width: 75%;
   }
 
+  .lg\:w-\[160px\]{
+    width: 160px;
+  }
+
   .lg\:w-auto{
     width: auto;
   }
@@ -3091,6 +3085,14 @@ select{
 
   .lg\:flex-nowrap{
     flex-wrap: nowrap;
+  }
+
+  .lg\:justify-normal{
+    justify-content: normal;
+  }
+
+  .lg\:justify-start{
+    justify-content: flex-start;
   }
 
   .lg\:whitespace-nowrap{
@@ -3139,6 +3141,10 @@ select{
 
   .lg\:pt-0{
     padding-top: 0px;
+  }
+
+  .lg\:pb-0{
+    padding-bottom: 0px;
   }
 
   .lg\:text-4xl{

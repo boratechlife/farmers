@@ -1,105 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/output.css" rel="stylesheet">
-</head>
-<body class="flex">
-<div class=" flex flex-wrap lg:flex-nowrap items-center w-full">
-  <div class="w-full lg:w-1/2 flex ">
-    <img src="./loginImage.png" class="w-full  h-screen object-top object-cover" alt="">
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="flex">
+    <div class="flex flex-wrap lg:flex-nowrap items-center w-full">
+      <div class="w-full lg:w-1/2 hidden lg:flex">
+        <img
+          src="./loginImage.png"
+          class="w-full h-screen object-top object-cover"
+          alt=""
+        />
+      </div>
 
-  <div class="w-full md:w-1/2 flex  items-center flex-col justify-center relative">
-    <!-- TOP START -->
-    <div class="absolute -top-20 left-4">
-      <img src="./images/login-star.png" class="w-[77px] h-[69px] object-fit" alt="">
-    </div>
-        <!-- BOTTOM START -->
-        <div class="absolute -bottom-28 right-40">
-          <img src="./images/login-star.png" class="w-[77px] h-[69px] object-fit" alt="">
+      <div
+        class="w-full md:w-1/2 py-10 flex items-center flex-col justify-center relative"
+      >
+        <!-- TOP START -->
+        <div class="absolute -top-20 hidden lg:block left-4">
+          <img
+            src="./images/login-star.png"
+            class="w-[77px] h-[69px] object-fit"
+            alt=""
+          />
         </div>
-    <div class="w-full px-4 lg:w-3/4 flex flex-col items-center justify-center">
-      <div class="mb-4">
-        <img src="./logo.png" class="w-[160px] h-[55px] object-fit" alt="">
-      </div>
-      <div class="mb-4">
-        <h4  class="text-[#334C36] text-center font-Poppins font-medium text-[24px] leading-normal tracking-[0.1px] capitalize">Create Account</h4>
-      </div>
+        <!-- BOTTOM START -->
+        <div class="absolute -bottom-28 hidden lg:block right-40">
+          <img
+            src="./images/login-star.png"
+            class="w-[77px] h-[69px] object-fit"
+            alt=""
+          />
+        </div>
+        <div
+          class="w-full px-4 lg:w-3/4 flex flex-col items-center justify-center"
+        >
+          <div
+            class="mb-4 flex justify-between w-full lg:w-auto lg:justify-normal"
+          >
+            <img
+              src="./logo.png"
+              class="lg:w-[160px] h-[24px] lg:h-[55px] object-fit"
+              alt=""
+            />
 
-      <nav aria-label="Progress" class="w-full flex mb-5">
-        <ol role="list" class="flex items-center w-full">
-   
-          <li class="relative w-1/2 pr-8 sm:pr-20">
-            <!-- Completed Step -->
-            <div class="absolute inset-0 flex items-center" aria-hidden="true">
-              <div class="h-0.5 w-full bg-secondary"></div>
-            </div>
-            <a href="#" class="relative flex h-8 w-8 items-center justify-center rounded-full bg-secondary">
-              <svg class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            <div class="lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="27"
+                viewBox="0 0 26 27"
+                fill="none"
+              >
+                <g filter="url(#filter0_d_411_13344)">
+                  <path
+                    d="M5 18.5H21C21.55 18.5 22 18.05 22 17.5C22 16.95 21.55 16.5 21 16.5H5C4.45 16.5 4 16.95 4 17.5C4 18.05 4.45 18.5 5 18.5ZM5 13.5H21C21.55 13.5 22 13.05 22 12.5C22 11.95 21.55 11.5 21 11.5H5C4.45 11.5 4 11.95 4 12.5C4 13.05 4.45 13.5 5 13.5ZM4 7.5C4 8.05 4.45 8.5 5 8.5H21C21.55 8.5 22 8.05 22 7.5C22 6.95 21.55 6.5 21 6.5H5C4.45 6.5 4 6.95 4 7.5Z"
+                    fill="#1C1C1C"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_d_411_13344"
+                    x="-3"
+                    y="0.5"
+                    width="32"
+                    height="32"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_411_13344"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_411_13344"
+                      result="shape"
+                    />
+                  </filter>
+                </defs>
               </svg>
-              <span class="sr-only">Create account</span>
-            </a>
-
-            <h4 class="absolute -bottom-14 lg:-bottom-7 w-1/4 lg:w-auto lg:-left-10 text-secondary font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]">Create account</h4>
-          </li>
-   
-          <li class="relative w-1/2 pr-8 sm:pr-20">
-            <!-- Completed Step -->
-            <div class="absolute inset-0 flex items-center" aria-hidden="true">
-              <div class="h-0.5 w-full bg-secondary"></div>
             </div>
-            <a href="#" class="relative flex h-8 w-8 items-center justify-center rounded-full bg-secondary">
-<span class="text-white">2</span>
-              <span class="sr-only">Professional Details</span>
-            </a>
+          </div>
+          <div class="mb-4">
+            <h4
+              class="text-[#334C36] text-center font-Poppins font-medium text-[24px] leading-normal tracking-[0.1px] capitalize"
+            >
+              Create Account
+            </h4>
+          </div>
 
-            <h4 class="absolute -bottom-14 text-center lg:-bottom-7 w-1/4 lg:w-auto -left-10 lg:-left-10 text-secondary font-Poppins txt-base  lg:text-base font-medium leading-[20px] tracking-[0.1px]">Professional Details</h4>
-          </li>
+          <nav
+            aria-label="Progress"
+            class="w-full flex mb-10 pb-6 lg:pb-0 lg:mb-5"
+          >
+            <ol role="list" class="flex items-center w-full">
+              <li class="relative w-1/2 pr-8 sm:pr-20">
+                <!-- Completed Step -->
+                <div
+                  class="absolute inset-0 flex items-center"
+                  aria-hidden="true"
+                >
+                  <div class="h-0.5 w-full bg-secondary"></div>
+                </div>
+                <a
+                  href="#"
+                  class="relative flex h-8 w-8 items-center justify-center rounded-full bg-secondary"
+                >
+                  <svg
+                    class="h-5 w-5 text-white"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span class="sr-only">Create account</span>
+                </a>
 
-          <li class="relative ">
-            <!-- Upcoming Step -->
-            <div class="absolute inset-0 flex items-center" aria-hidden="true">
-              <div class="h-0.5 w-full bg-[#8C8C8C]"></div>
+                <h4
+                  class="absolute -bottom-14 lg:-bottom-7 w-1/4 lg:w-auto lg:-left-10 text-secondary font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]"
+                >
+                  Create account
+                </h4>
+              </li>
+
+              <li class="relative w-1/2 pr-8 sm:pr-20">
+                <!-- Completed Step -->
+                <div
+                  class="absolute inset-0 flex items-center"
+                  aria-hidden="true"
+                >
+                  <div class="h-0.5 w-full bg-secondary"></div>
+                </div>
+                <a
+                  href="#"
+                  class="relative flex h-8 w-8 items-center justify-center rounded-full bg-secondary"
+                >
+                  <span class="text-white">2</span>
+                  <span class="sr-only">Professional Details</span>
+                </a>
+
+                <h4
+                  class="absolute -bottom-14 text-center lg:-bottom-7 w-1/4 lg:w-auto -left-10 lg:-left-10 text-secondary font-Poppins txt-base lg:text-base font-medium leading-[20px] tracking-[0.1px]"
+                >
+                  Professional Details
+                </h4>
+              </li>
+
+              <li class="relative">
+                <!-- Upcoming Step -->
+                <div
+                  class="absolute inset-0 flex items-center"
+                  aria-hidden="true"
+                >
+                  <div class="h-0.5 w-full bg-[#8C8C8C]"></div>
+                </div>
+                <a
+                  href="#"
+                  class="group relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#8C8C8C] bg-[#8C8C8C] text-white"
+                >
+                  <span
+                    class="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-[#8C8C8C] flex items-center justify-center"
+                    aria-hidden="true"
+                    >3</span
+                  >
+                  <span class="sr-only">More details </span>
+                </a>
+                <h4
+                  class="absolute -bottom-14 lg:-bottom-7 w-1/4 lg:w-auto -left-3 text-center lg:-left-10 lg:whitespace-nowrap text-[#8C8C8C] font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]"
+                >
+                  More details
+                </h4>
+              </li>
+            </ol>
+          </nav>
+
+          <div class="flex flex-col w-full mt-10 lg:w-2/3 gap-4">
+            <div class="">
+              <input
+                id="role"
+                name="role"
+                placeholder="Role "
+                type="text"
+                autocomplete="role"
+                required
+                class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
             </div>
-            <a href="#" class="group relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#8C8C8C] bg-[#8C8C8C] text-white">
-              <span class="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-[#8C8C8C] flex items-center justify-center" aria-hidden="true">3</span>
-              <span class="sr-only">More details </span>
-            </a>
-            <h4 class="absolute -bottom-14 lg:-bottom-7 w-1/4 lg:w-auto -left-3 text-center lg:-left-10 lg:whitespace-nowrap text-[#8C8C8C] font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]">More details </h4>
-          </li>
-        </ol>
-      </nav>
-      
-  <div class="flex flex-col w-full mt-10 lg:w-2/3 gap-4">
 
+            <div class="">
+              <input
+                id="geolocation"
+                name="geolocation"
+                placeholder="Geographical location"
+                type="text"
+                autocomplete="role"
+                required
+                class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
 
-    <div class="">
-      <input id="role" name="role"
-      placeholder="Role "
-       type="text" autocomplete="role" required
-        class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <div>
+              <a
+                type="submit"
+                href="/src/signup_step_3.html"
+                class="bg-primary w-full rounded-md flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase"
+                >Login</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="">
-      <input id="geolocation" name="geolocation"
-      placeholder="Geographical location"
-       type="text" autocomplete="role" required
-        class="block rounded-[6px] border border-[#D9D9D9] bg-[#FAFDFF] w-full  py-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-    </div>
-
-
-
-    <div>
-      <a type="submit" 
-      href="/src/signup_step_3.html"
-      class="bg-primary w-full  rounded-md  flex px-[10px] py-3 justify-center items-center gap-[10px] self-stretch text-[#FAFDFF] font-Poppins text-[16px] font-bold leading-[24px] uppercase">Login</a>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-</body>
+  </body>
 </html>
