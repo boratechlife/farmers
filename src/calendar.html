@@ -13,10 +13,11 @@
     href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet" />
   <link href="/dist/output.css" rel="stylesheet" />
+  <script src="//unpkg.com/alpinejs" defer></script>
   <title>Market Prices - Farmers</title>
 </head>
 
-<body class="h-full font-poppins">
+<body class="h-full font-poppins" x-data="{ addEvent: false }">
   <div class="h-full lg:grid lg:grid-cols-[15.125rem_1fr] bg-light">
     <aside class="lg:border-r-[0.1px] border-gray-1/10 lg:h-full">
       <div class="pt-5 px-5 lg:px-10 lg:pb-8 flex justify-between">
@@ -273,8 +274,69 @@
           </ul>
         </div>
 
+        <div class=" pt-8 hidden lg:block">
+
+          <select type="text" name="" class="w-[128px] py-2.5 px-4 border border-[#D0D0D0] rounded-md" id="">
+            <option value="">Maize</option>
+          </select>
+        </div>
+        <div class="flex justify-end pr-4 lg:pr-0">
+          <a href="" class="font-Poppins font-bold my-4 lg:hidden  text-sm underline uppercase text-[#359744]"
+            x-on:click="addEvent=true">Add event</a>
+          <button
+            class="w-[176px] hidden lg:flex  my-4 text-white justify-center bg-primary  rounded-md py-[10px] px-[16px] uppercase font-semibold"
+            x-on:click="addEvent=true">add
+            event</button>
+        </div>
 
 
+
+        <div
+          class="absolute inset-0 bg-white top-0 z-50 bottom-0 right-0 left-0 bg-opacity-20 flex  lg:items-center lg:justify-center"
+          x-show="addEvent">
+          <div class="w-full lg:w-1/4 p-8 flex flex-col gap-4 bg-white  border border-gray-1/30 rounded shadow ">
+
+            <div class="absolute" x-on:click="addEvent = false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="black"
+                  fill-opacity="0.54" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-2xl font-Poppins text-center text">
+              Add Expense
+            </h4>
+
+
+            <h5 class="text-[#1C1C1C] font-Poppins text-[15px]">Input your income </h5>
+            <div class="flex flex-col gap-3">
+
+
+
+
+              <input type="text"
+                class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                placeholder="Quantity">
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                <input type="date"
+                  class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm">
+                <input type="date"
+                  class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm">
+
+              </div>
+
+
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
+                <a type="button"
+                  class="py-[12.5px] border border-primary rounded-md px-[14px] bg-white text-primary font-bold text-sm">Cancel</a>
+                <input type="button" class="py-[12.5px]  bg-primary rounded-md px-[14px] text-white font-bold text-sm"
+                  placeholder="SUBMIT" value="SUBMIT">
+              </div>
+
+            </div>
+          </div>
+        </div>
 
         <div class="flex items-center justify-center">
           <div class="flex items-center gap-4">
