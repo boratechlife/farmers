@@ -276,14 +276,14 @@
         <div class="w-full flex justify-end">
           <button x-on:click="addIncome= true"
             class="flex w-56 py-2.5 px-4 font-bold items-center justify-center bg-[#359744] text-white rounded-md">
-            ADD INCOME
+            ADD EXPENSE
           </button>
         </div>
 
         <div
           class="absolute inset-0 bg-white top-0 z-50 bottom-0 right-0 left-0 bg-opacity-20 flex  lg:items-center lg:justify-center"
           x-show="addIncome">
-          <div class="w-full lg:w-1/4 p-8 flex flex-col gap-4 bg-white  border border-gray-1/30 rounded shadow ">
+          <div class="w-full lg:w-2/5 p-8 flex flex-col gap-4 bg-white  border border-gray-1/30 rounded shadow ">
 
             <div class="absolute" x-on:click="addIncome = false">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -292,21 +292,37 @@
               </svg>
             </div>
             <h4 class="font-semibold text-2xl font-Poppins text-center text">
-              Income
+              Add Expense
             </h4>
 
+            <!-- TABS NAVIGATION -->
+            <div class="mt-6  w-full">
+              <ul class="w-full flex-nowrap gap-4 lg:gap-0 overflow-x-auto flex border-b-2 border-[#E7E0EC]">
+                <li
+                  class="max-sm:min-w-max lg:flex-1 h-[48px] flex items-center justify-center text-primary border-b-2 border-primary font-medium text-center uppercase">
+                  Input cost
+                </li>
 
+                <li
+                  class="max-sm:min-w-max  lg:flex-1 h-[48px] flex items-center justify-center text-[#49454F] border-b-2 border-transparent font-medium text-center uppercase">
+                  Labor cost
+                </li>
+                <li
+                  class="max-sm:min-w-max  lg:flex-1 h-[48px] flex items-center justify-center text-[#49454F] border-b-2 border-transparent font-medium text-center uppercase">
+                  Administrative expense
+                </li>
+              </ul>
+            </div>
 
             <h5 class="text-[#1C1C1C] font-Poppins text-[15px]">Input your income </h5>
             <div class="flex flex-col gap-3">
-              <input type="text"
+              <select type="text"
                 class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
-                placeholder="Comodity">
+                placeholder="Commodity">
+                <option value="">Commodity</option>
+              </select>
 
-              <div class="border border-dotted py-[12.5px]  border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px]">
-                <div class=" w-full text-[#4F5253] text-sm text-center">upload Image</div>
-                <input type="file" class=" border absolute opacity-0    text-[#4F5253] text-sm" placeholder="Comodity">
-              </div>
+
 
 
               <input type="text"
