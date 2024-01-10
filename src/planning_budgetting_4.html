@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link href="/dist/output.css" rel="stylesheet" />
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>Market Prices - Farmers</title>
   </head>
 
@@ -287,11 +288,11 @@
             Planning and budgeting
           </h4>
 
-          <div class="w-10/12">
-            <div class="w-2/3 transform translate-x-[60px]">
+          <div class="w-full lg:w-10/12">
+            <div class="w-full lg:w-2/3 transform lg:translate-x-[60px] max-sm:overflow-x-auto">
               <nav aria-label="Progress" class="w-full flex mb-5">
-                <ol role="list" class="flex items-center w-full">
-                  <li class="relative w-1/2 pr-8 sm:pr-20">
+                <ol role="list" class="flex items-center w-full max-sm:ml-6">
+                  <li class="relative max-sm:min-w-max lg:w-1/2 pr-8 sm:pr-20">
                     <!-- Completed Step -->
                     <div
                       class="absolute inset-0 flex items-center"
@@ -301,7 +302,7 @@
                     </div>
                     <a
                       href="#"
-                      class="relative flex h-8 w-8 items-center justify-center rounded-full bg-primary"
+                      class="absolute mt-[40.5px] transform   lg:relative  lg:mt-0  flex h-8 w-8 items-center justify-center rounded-full bg-[#8AD23B]"
                     >
                       <svg
                         class="h-5 w-5 text-white"
@@ -321,14 +322,14 @@
                     </a>
 
                     <h4
-                      class="absolute text-[12px] -bottom-12 -left-1/2 transform translate-x-1/2 text-[#8C8C8C] text-center font-Poppins text-base font-medium leading-[20px] tracking-[0.1px]"
+                      class="lg:absolute mt-20 lg:mt-0 max-sm:-ml-[1.55rem]  text-[12px] -bottom-16 -left-1/2 transform lg:translate-x-1/2 text-[#1C1C1C] text-center font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]"
                     >
                       Crop and livestock <br />
                       selection
                     </h4>
                   </li>
 
-                  <li class="relative w-1/2 pr-8 sm:pr-20">
+                  <li class="relative max-sm:min-w-max lg:w-1/2 pr-8 sm:pr-20">
                     <!-- Completed Step -->
                     <div
                       class="absolute inset-0 flex items-center"
@@ -338,21 +339,21 @@
                     </div>
                     <a
                       href="#"
-                      class="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#8C8C8C]"
+                      class="absolute mt-[40.5px] transform   lg:relative  lg:mt-0  flex h-8 w-8 items-center justify-center rounded-full bg-[#8C8C8C]"
                     >
                       <span class="text-white">2</span>
                       <span class="sr-only">Seasonal suitability review</span>
                     </a>
 
                     <h4
-                      class="absolute text-center text-[12px] -bottom-12 -left-1/2 transform translate-x-1/2 text-[#8C8C8C] font-Poppins text-base font-medium leading-[20px] tracking-[0.1px]"
+                      class="lg:absolute mt-20 lg:mt-0 max-sm:-ml-[1.55rem]  text-[12px] -bottom-16 -left-1/2 transform lg:translate-x-1/2 text-[#8C8C8C] text-center font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]"
                     >
                       Seasonal suitability <br />
                       review
                     </h4>
                   </li>
 
-                  <li class="relative w-1/2 pr-8 sm:pr-20">
+                  <li class="relative max-sm:min-w-max lg:w-1/2 pr-8 sm:pr-20">
                     <!-- Completed Step -->
                     <div
                       class="absolute inset-0 flex items-center"
@@ -362,41 +363,41 @@
                     </div>
                     <a
                       href="#"
-                      class="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#8C8C8C]"
+                      class="absolute mt-[40.5px] transform   lg:relative  lg:mt-0  flex h-8 w-8 items-center justify-center rounded-full bg-[#8C8C8C]"
                     >
-                      <span class="text-white">2</span>
+                      <span class="text-white">3</span>
                       <span class="sr-only">Seasonal suitability review</span>
                     </a>
 
                     <h4
-                      class="absolute text-[12px] -bottom-12 text-center -left-1/2 transform translate-x-1/2 text-[#8C8C8C] font-Poppins text-base font-medium leading-[20px] tracking-[0.1px]"
+                      class="lg:absolute mt-20 lg:mt-0 max-sm:-ml-[1.55rem]  text-[12px] -bottom-16 -left-1/2 transform lg:translate-x-1/2 text-[#8C8C8C] text-center font-Poppins text-sm lg:text-base font-medium leading-[20px] tracking-[0.1px]"
                     >
                       Land acreage and <br />
                       spacing
                     </h4>
                   </li>
 
-                  <li class="relative">
+                  <li class="relative min-w-40 ">
                     <!-- Upcoming Step -->
                     <div
-                      class="absolute inset-0 flex items-center"
+                      class="absolute hidden  inset-0  items-center"
                       aria-hidden="true"
                     >
                       <div class="h-0.5 w-full bg-[#8C8C8C]"></div>
                     </div>
                     <a
                       href="#"
-                      class="group relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#8C8C8C] bg-[#8C8C8C] text-white"
+                      class="absolute mt-[40.5px] transform   lg:relative  lg:mt-0  flex h-8 w-8 items-center justify-center rounded-full bg-[#8C8C8C]"
                     >
                       <span
-                        class="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-[#8C8C8C] flex items-center justify-center"
+                        class="h-2.5 w-2.5 rounded-full bg-transparent group-hover:bg-[#8C8C8C] flex text-white items-center justify-center"
                         aria-hidden="true"
-                        >3</span
+                        >4</span
                       >
                       <span class="sr-only">More details </span>
                     </a>
                     <h4
-                      class="absolute text-[12px] -bottom-12 text-center -left-20 transform whitespace-nowrap text-[#8C8C8C] font-Poppins text-base font-medium leading-[20px] tracking-[0.1px]"
+                      class="lg:absolute block w-full mt-20 lg:mt-0 max-sm:-ml-[1.55rem]  text-[12px] -bottom-16 -left-1/2 transform lg:translate-x-1/2 text-[#8C8C8C] text-center font-Poppins text-sm lg:text-base lg:w-48 lg:-ml-12 font-medium leading-[20px] tracking-[0.1px]"
                     >
                       Timeline and Season <br />
                       Calendar
@@ -406,317 +407,222 @@
               </nav>
             </div>
           </div>
+<!-- START CALENDER -->
+<div class="w-10/12 mt-8">
+  <div class=" pt-8 hidden lg:block">
 
-          <div class="w-10/12 mt-28">
-            <div class="w-full flex items-center justify-between">
-              <button
-                class="flex w-[143px] gap-2 border border-[#D0D0D0] rounded-lg font-Poppins font-bold uppercase justify-center items-center py-[10px] px-[16px]"
-              >
-                <span class="font-medium text-base font-Poppins text-[#1C1C1C]"
-                  >Maize</span
-                >
-                <span>
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <mask
-                      id="mask0_180_2827"
-                      style="mask-type: alpha"
-                      maskUnits="userSpaceOnUse"
-                      x="0"
-                      y="0"
-                      width="25"
-                      height="24"
-                    >
-                      <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-                    </mask>
-                    <g mask="url(#mask0_180_2827)">
-                      <path d="M12.5 15L7.5 10H17.5L12.5 15Z" fill="#353535" />
-                    </g>
-                  </svg>
-                </span>
-              </button>
-              <button
-                class="flex w-[143px] bg-primary rounded-lg text-[#FAFDFF] font-Poppins font-bold uppercase justify-center items-center py-[10px] px-[16px]"
-              >
-                Add EVENT
-              </button>
-            </div>
-            <div class="flex justify-between mt-8">
-              <div class="flex gap-0.5">
-                <div
-                  class="h-[28px] w-[28px] rounded-l-md bg-[#F4F4F5] flex justify-center items-center"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12.7068 5.29303C12.8943 5.48056 12.9996 5.73487 12.9996 6.00003C12.9996 6.26519 12.8943 6.5195 12.7068 6.70703L9.41379 10L12.7068 13.293C12.8889 13.4816 12.9897 13.7342 12.9875 13.9964C12.9852 14.2586 12.88 14.5094 12.6946 14.6948C12.5092 14.8803 12.2584 14.9854 11.9962 14.9877C11.734 14.99 11.4814 14.8892 11.2928 14.707L7.29279 10.707C7.10532 10.5195 7 10.2652 7 10C7 9.73487 7.10532 9.48056 7.29279 9.29303L11.2928 5.29303C11.4803 5.10556 11.7346 5.00024 11.9998 5.00024C12.265 5.00024 12.5193 5.10556 12.7068 5.29303Z"
-                      fill="#1C1C1C"
-                    />
-                  </svg>
+    <select type="text" name="" class="w-[128px] py-2.5 px-4 border border-[#D0D0D0] rounded-md" id="">
+      <option value="">Maize</option>
+    </select>
+  </div>
+  <div class="flex justify-end pr-4 lg:pr-0">
+    <a href="" class="font-Poppins font-bold my-4 lg:hidden  text-sm underline uppercase text-[#359744]"
+      x-on:click="addEvent=true">Add event</a>
+    <button
+      class="w-[176px] hidden lg:flex  my-4 text-white justify-center bg-primary  rounded-md py-[10px] px-[16px] uppercase font-semibold"
+      x-on:click="addEvent=true">add
+      event</button>
+  </div>
+
+
+
+  <div
+    class="absolute inset-0 bg-white top-0 z-50 bottom-0 right-0 left-0 bg-opacity-20 flex  lg:items-center lg:justify-center"
+    x-show="addEvent">
+    <div class="w-full lg:w-1/4 p-8 flex flex-col gap-4 bg-white  border border-gray-1/30 rounded shadow ">
+
+      <div class="absolute" x-on:click="addEvent = false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="black"
+            fill-opacity="0.54" />
+        </svg>
+      </div>
+      <h4 class="font-semibold text-2xl font-Poppins text-center text">
+        Seasonal Calendar
+      </h4>
+
+
+   
+      <div class="flex flex-col gap-3">
+
+
+
+
+        <input type="text"
+          class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+          placeholder="Title">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+          <input type="date"
+            class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm">
+          <input type="date"
+            class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm">
+
+        </div>
+
+
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
+          <a type="button"
+            class="py-[12.5px] border border-primary rounded-md px-[14px] bg-white text-primary font-bold text-sm">Cancel</a>
+          <input type="button" class="py-[12.5px]  bg-primary rounded-md px-[14px] text-white font-bold text-sm"
+            placeholder="SUBMIT" value="SUBMIT">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center">
+    <div class="flex items-center gap-4">
+      <h4 class="text-[#1C1C1C] font-medium text-[20px]">December</h4>
+      <span class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"
+          fill="none">
+          <path d="M5 5L0 0H10L5 5Z" fill="#353535" fill-opacity="0.54" />
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- CALENDER -->
+  <div class="w-full bg-white shadow border  overflow-x-auto">
+    <table class="table w-full bg-white">
+      <thead class="bg-primary text-white">
+        <tr class="*:py-2.5 *:text-left *:px-2">
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wensday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+      </thead>
+
+      <tbody class="">
+        <tr class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative">
+          <td class="">27</td>
+          <td>28</td>
+          <td>29</td>
+          <td>30</td>
+          <td>31</td>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative">
+          <td class="">3</td>
+          <td>
+            4
+
+            <div style="
+                  box-shadow: 0px 8px 12px 0px rgba(191, 191, 217, 0.15),
+                    0px 2px 4px 0px rgba(191, 191, 217, 0.1);
+                "
+              class="absolute rounded-r-lg top-2 left-1/4 h-[79px] bg-[#FCFCFC] justify-center px-2 z-50 w-[136px] border-l-4 border-primary">
+              <div class="flex flex-col h-full justify-center">
+                <div class="text-[#1C1C1C] text-sm font-medium font-Poppins">
+                  Farming season
                 </div>
-                <div
-                  class="h-[28px] px-4 rounded-l-md bg-[#F4F4F5] flex justify-center items-center"
-                >
-                  Today
-                </div>
-                <div
-                  class="h-[28px] w-[28px] rounded-r-md bg-[#F4F4F5] flex justify-center items-center"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.29279 14.7069C7.10532 14.5194 7 14.2651 7 13.9999C7 13.7348 7.10532 13.4804 7.29279 13.2929L10.5858 9.99992L7.29279 6.70692C7.11063 6.51832 7.00983 6.26571 7.01211 6.00352C7.01439 5.74132 7.11956 5.49051 7.30497 5.3051C7.49038 5.11969 7.74119 5.01452 8.00339 5.01224C8.26558 5.00997 8.51818 5.11076 8.70679 5.29292L12.7068 9.29292C12.8943 9.48045 12.9996 9.73475 12.9996 9.99992C12.9996 10.2651 12.8943 10.5194 12.7068 10.7069L8.70679 14.7069C8.51926 14.8944 8.26495 14.9997 7.99979 14.9997C7.73462 14.9997 7.48031 14.8944 7.29279 14.7069Z"
-                      fill="#1C1C1C"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="">
-                <ul class="flex items-center gap-3">
-                  <li class="text-[#71717A] text-sm font-semibold">Day</li>
-                  <li class="text-[#71717A] text-sm font-semibold">Week</li>
-                  <li
-                    class="flex py-1 px-4 items-center bg-primary text-white text-sm font-medium rounded-md"
-                  >
-                    Month
-                  </li>
-
-                  <li class="text-[#71717A] text-sm font-semibold">Year</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-center">
-              <div class="flex items-center gap-4">
-                <h4 class="text-[#1C1C1C] font-medium text-[20px]">December</h4>
-                <span class="mt-1"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    height="5"
-                    viewBox="0 0 10 5"
-                    fill="none"
-                  >
-                    <path
-                      d="M5 5L0 0H10L5 5Z"
-                      fill="#353535"
-                      fill-opacity="0.54"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-
-            <!-- CALENDER -->
-            <div class="w-full bg-white shadow border">
-              <table class="table w-full bg-white">
-                <thead class="bg-primary text-white">
-                  <tr class="*:py-2.5 *:text-left *:px-2">
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wensday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                    <th>Sunday</th>
-                  </tr>
-                </thead>
-
-                <tbody class="">
-                  <tr
-                    class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative"
-                  >
-                    <td class="">27</td>
-                    <td>28</td>
-                    <td>29</td>
-                    <td>30</td>
-                    <td>31</td>
-                    <td>1</td>
-                    <td>2</td>
-                  </tr>
-                  <tr
-                    class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative"
-                  >
-                    <td class="">3</td>
-                    <td>
-                      4
-
-                      <div
-                        style="
-                          box-shadow: 0px 8px 12px 0px rgba(191, 191, 217, 0.15),
-                            0px 2px 4px 0px rgba(191, 191, 217, 0.1);
-                        "
-                        class="absolute rounded-r-lg top-2 left-1/4 h-[79px] bg-[#FCFCFC] justify-center px-2 z-50 w-[136px] border-l-4 border-primary"
-                      >
-                        <div class="flex flex-col h-full justify-center">
-                          <div
-                            class="text-[#1C1C1C] text-sm font-medium font-Poppins"
-                          >
-                            Farming season
-                          </div>
-                          <div
-                            class="text-[11px] font-medium font-Poppins text-[#8C8C8C]"
-                          >
-                            8.00am
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                  </tr>
-                  <tr
-                    class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative"
-                  >
-                    <td class="">10</td>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                    <td>14</td>
-                    <td>15</td>
-                    <td>16</td>
-                  </tr>
-                  <tr
-                    class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative"
-                  >
-                    <td class="">17</td>
-                    <td>18</td>
-                    <td class="bg-[#E9FEEE]">19</td>
-                    <td>20</td>
-                    <td>
-                      21
-                      <div
-                        style="
-                          box-shadow: 0px 8px 12px 0px rgba(191, 191, 217, 0.15),
-                            0px 2px 4px 0px rgba(191, 191, 217, 0.1);
-                        "
-                        class="absolute rounded-r-lg top-2 left-1/4 h-[79px] bg-[#FCFCFC] justify-center px-2 z-50 w-[136px] border-l-4 border-primary min-w-max"
-                      >
-                        <div class="flex flex-col h-full justify-center">
-                          <div
-                            class="text-[#1C1C1C] text-sm font-medium font-Poppins whitespace-nowrap"
-                          >
-                            Rice order delivery
-                          </div>
-                          <div
-                            class="text-[11px] font-medium font-Poppins text-[#8C8C8C]"
-                          >
-                            Individual
-                          </div>
-                          <div
-                            class="text-[11px] font-medium font-Poppins text-[#8C8C8C]"
-                          >
-                            8.00am
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>22</td>
-                    <td>23</td>
-                  </tr>
-                  <tr
-                    class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative"
-                  >
-                    <td class="">24</td>
-                    <td>25</td>
-                    <td>26</td>
-                    <td>27</td>
-                    <td>28</td>
-                    <td>29</td>
-                    <td>30</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="">
-              <h4 class="text-[#1C1C1C] text-lg font-Poppins py-2 mb-4">
-                Events
-              </h4>
-
-              <p class="text-[#1C1C1C] font-Poppins text-sm mb-5">
-                Activities: Mark as complete
-              </p>
-              <div class="inline-flex flex-wrap items-center gap-4">
-                <div class="flex items-center gap-1">
-                  <div
-                    class="h-[16px] w-[16px] border-2 border-success-1 rounded-[3px] flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 3L4.5 8.5L2 6"
-                        stroke="#359744"
-                        stroke-width="1.6666"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <span class="text-sm text-[#1C1C1C]">Land preparation</span>
-                </div>
-
-                <div class="flex items-center gap-1">
-                  <div
-                    class="h-[16px] w-[16px] rounded-[3px] flex items-center justify-center"
-                    style="border: 1px solid rgba(0, 0, 0, 0.54)"
-                  ></div>
-                  <span class="text-sm text-[#1C1C1C]">Land preparation</span>
+                <div class="text-[11px] font-medium font-Poppins text-[#8C8C8C]">
+                  8.00am
                 </div>
               </div>
-
-              <div class="mt-8">
-                <a href="" class="flex gap-4 items-center">
-                  <span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M14.6156 13.3998C14.031 13.3998 13.5079 13.6498 13.1079 14.0415L7.6233 10.5832C7.66176 10.3915 7.69253 10.1998 7.69253 9.99984C7.69253 9.79984 7.66176 9.60817 7.6233 9.4165L13.0464 5.9915C13.4618 6.40817 14.0079 6.6665 14.6156 6.6665C15.8925 6.6665 16.9233 5.54984 16.9233 4.1665C16.9233 2.78317 15.8925 1.6665 14.6156 1.6665C13.3387 1.6665 12.3079 2.78317 12.3079 4.1665C12.3079 4.3665 12.3387 4.55817 12.3771 4.74984L6.95407 8.17484C6.53869 7.75817 5.99253 7.49984 5.38484 7.49984C4.10792 7.49984 3.07715 8.6165 3.07715 9.99984C3.07715 11.3832 4.10792 12.4998 5.38484 12.4998C5.99253 12.4998 6.53869 12.2415 6.95407 11.8248L12.431 15.2915C12.3925 15.4665 12.3695 15.6498 12.3695 15.8332C12.3695 17.1748 13.3771 18.2665 14.6156 18.2665C15.8541 18.2665 16.8618 17.1748 16.8618 15.8332C16.8618 14.4915 15.8541 13.3998 14.6156 13.3998ZM14.6156 3.33317C15.0387 3.33317 15.3848 3.70817 15.3848 4.1665C15.3848 4.62484 15.0387 4.99984 14.6156 4.99984C14.1925 4.99984 13.8464 4.62484 13.8464 4.1665C13.8464 3.70817 14.1925 3.33317 14.6156 3.33317ZM5.38484 10.8332C4.96176 10.8332 4.61561 10.4582 4.61561 9.99984C4.61561 9.5415 4.96176 9.1665 5.38484 9.1665C5.80792 9.1665 6.15407 9.5415 6.15407 9.99984C6.15407 10.4582 5.80792 10.8332 5.38484 10.8332ZM14.6156 16.6832C14.1925 16.6832 13.8464 16.3082 13.8464 15.8498C13.8464 15.3915 14.1925 15.0165 14.6156 15.0165C15.0387 15.0165 15.3848 15.3915 15.3848 15.8498C15.3848 16.3082 15.0387 16.6832 14.6156 16.6832Z"
-                        fill="#1C1C1C"
-                        fill-opacity="0.54"
-                      />
-                    </svg>
-                  </span>
-
-                  <span class="text-[#1C1C1C] text-sm font-Poppins"
-                    >Share calendar</span
-                  >
-                </a>
+            </div>
+          </td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+        <tr class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative">
+          <td class="">10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+        </tr>
+        <tr class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative">
+          <td class="">17</td>
+          <td>18</td>
+          <td class="bg-[#E9FEEE]">19</td>
+          <td>20</td>
+          <td>
+            21
+            <div style="
+                  box-shadow: 0px 8px 12px 0px rgba(191, 191, 217, 0.15),
+                    0px 2px 4px 0px rgba(191, 191, 217, 0.1);
+                "
+              class="absolute rounded-r-lg top-2 left-1/4 h-[79px] bg-[#FCFCFC] justify-center px-2 z-50 w-[136px] border-l-4 border-primary min-w-max">
+              <div class="flex flex-col h-full justify-center">
+                <div class="text-[#1C1C1C] text-sm font-medium font-Poppins whitespace-nowrap">
+                  Rice order delivery
+                </div>
+                <div class="text-[11px] font-medium font-Poppins text-[#8C8C8C]">
+                  Individual
+                </div>
+                <div class="text-[11px] font-medium font-Poppins text-[#8C8C8C]">
+                  8.00am
+                </div>
               </div>
             </div>
-          </div>
+          </td>
+          <td>22</td>
+          <td>23</td>
+        </tr>
+        <tr class="*:py-8 *:px-4 *:pl-6 *:border *:h-[120px] *:relative">
+          <td class="">24</td>
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+          <td>28</td>
+          <td>29</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="">
+    <h4 class="text-[#1C1C1C] text-lg font-Poppins py-2 mb-4">
+      Events
+    </h4>
+
+    <p class="text-[#1C1C1C] font-Poppins text-sm mb-5">
+      Activities: Mark as complete
+    </p>
+    <div class="inline-flex flex-wrap items-center gap-4">
+      <div class="flex items-center gap-1">
+        <div class="h-[16px] w-[16px] border-2 border-success-1 rounded-[3px] flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M10 3L4.5 8.5L2 6" stroke="#359744" stroke-width="1.6666" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <span class="text-sm text-[#1C1C1C]">Land preparation</span>
+      </div>
+
+      <div class="flex items-center gap-1">
+        <div class="h-[16px] w-[16px] rounded-[3px] flex items-center justify-center"
+          style="border: 1px solid rgba(0, 0, 0, 0.54)"></div>
+        <span class="text-sm text-[#1C1C1C]">Land preparation</span>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a href="" class="flex gap-4 items-center">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M14.6156 13.3998C14.031 13.3998 13.5079 13.6498 13.1079 14.0415L7.6233 10.5832C7.66176 10.3915 7.69253 10.1998 7.69253 9.99984C7.69253 9.79984 7.66176 9.60817 7.6233 9.4165L13.0464 5.9915C13.4618 6.40817 14.0079 6.6665 14.6156 6.6665C15.8925 6.6665 16.9233 5.54984 16.9233 4.1665C16.9233 2.78317 15.8925 1.6665 14.6156 1.6665C13.3387 1.6665 12.3079 2.78317 12.3079 4.1665C12.3079 4.3665 12.3387 4.55817 12.3771 4.74984L6.95407 8.17484C6.53869 7.75817 5.99253 7.49984 5.38484 7.49984C4.10792 7.49984 3.07715 8.6165 3.07715 9.99984C3.07715 11.3832 4.10792 12.4998 5.38484 12.4998C5.99253 12.4998 6.53869 12.2415 6.95407 11.8248L12.431 15.2915C12.3925 15.4665 12.3695 15.6498 12.3695 15.8332C12.3695 17.1748 13.3771 18.2665 14.6156 18.2665C15.8541 18.2665 16.8618 17.1748 16.8618 15.8332C16.8618 14.4915 15.8541 13.3998 14.6156 13.3998ZM14.6156 3.33317C15.0387 3.33317 15.3848 3.70817 15.3848 4.1665C15.3848 4.62484 15.0387 4.99984 14.6156 4.99984C14.1925 4.99984 13.8464 4.62484 13.8464 4.1665C13.8464 3.70817 14.1925 3.33317 14.6156 3.33317ZM5.38484 10.8332C4.96176 10.8332 4.61561 10.4582 4.61561 9.99984C4.61561 9.5415 4.96176 9.1665 5.38484 9.1665C5.80792 9.1665 6.15407 9.5415 6.15407 9.99984C6.15407 10.4582 5.80792 10.8332 5.38484 10.8332ZM14.6156 16.6832C14.1925 16.6832 13.8464 16.3082 13.8464 15.8498C13.8464 15.3915 14.1925 15.0165 14.6156 15.0165C15.0387 15.0165 15.3848 15.3915 15.3848 15.8498C15.3848 16.3082 15.0387 16.6832 14.6156 16.6832Z"
+              fill="#1C1C1C" fill-opacity="0.54" />
+          </svg></span>
+
+        <span class="text-[#1C1C1C] text-sm font-Poppins">Share calendar</span>
+      </a>
+    </div>
+</div>
         </div>
       </main>
     </div>
