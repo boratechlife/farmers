@@ -3103,6 +3103,10 @@ select{
     min-width: max-content;
   }
 
+  .max-sm\:flex-col{
+    flex-direction: column;
+  }
+
   .max-sm\:gap-4{
     gap: 1rem;
   }
@@ -3326,6 +3330,10 @@ select{
 
   .lg\:max-w-\[39rem\]{
     max-width: 39rem;
+  }
+
+  .lg\:max-w-6xl{
+    max-width: 72rem;
   }
 
   .lg\:flex-1{
