@@ -17,7 +17,8 @@
   <title>Market Prices - Farmers</title>
 </head>
 
-<body class="h-full font-poppins" x-data="{ activeTab: 'settings' }">
+<body class="h-full font-poppins"
+  x-data="{ activeTab: 'settings', addIncome: false, farmType:'add', addSeasonal:false }">
   <div class="h-full lg:grid lg:grid-cols-[15.125rem_1fr] bg-light">
     <aside class="lg:border-r-[0.1px] border-gray-1/10 lg:h-full">
       <div class="pt-5 px-5 lg:px-10 lg:pb-8 flex justify-between">
@@ -327,6 +328,51 @@
         </div>
 
         <div class="tab-3 pt-[32px] lg:px-4 py-4 " x-show="activeTab=='farm'">
+          <!-- ADD FARM DETAILS -->
+          <div
+            class="absolute inset-0 bg-white top-0 z-50 bottom-0 right-0 left-0 bg-opacity-20 flex  lg:items-center lg:justify-center"
+            x-show="addIncome">
+            <div class="w-full lg:w-2/5 p-8 flex flex-col gap-4 bg-white  border border-gray-1/30 rounded shadow ">
+
+              <div class="absolute" x-on:click="addIncome = false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="black"
+                    fill-opacity="0.54" />
+                </svg>
+              </div>
+              <h4 class="font-semibold text-2xl font-Poppins text-center text">
+                <span x-text="farmType=='add' ? 'Add' : 'Edit'">Edit</span> farm details
+              </h4>
+              <div class="flex flex-col gap-3">
+                <select type="text" x-show="farmType !='add'"
+                  class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                  placeholder="Commodity">
+                  <option value="">Farm</option>
+                </select>
+
+
+                <input type="text" x-show="farmType =='add'"
+                  class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                  placeholder="Name">
+
+                <input type="text"
+                  class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                  placeholder="Size (ha)">
+
+                <input type="text"
+                  class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                  placeholder="Crop">
+
+                <input type="text"
+                  class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                  placeholder="Location">
+
+                <input type="button" class="py-[12.5px]  bg-primary rounded-md px-[14px] text-white font-bold text-sm"
+                  placeholder="SUBMIT" value="UPDATE">
+              </div>
+            </div>
+          </div>
+
           <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">Farm
             Details</h4>
           <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
@@ -398,82 +444,132 @@
 
           <div class="flex w-full flex-col lg:flex-row lg:justify-end gap-4 mt-4 lg:items-center">
             <button
-              class=" max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">EDIT</button>
+              class=" max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md"
+              x-on:click="addIncome = true; farmType='edit'">EDIT</button>
             <button
-              class="max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">ADD
+              class="max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md"
+              x-on:click="()=>{addIncome = true;
+                farmType='add'}">ADD
               FARM</button>
           </div>
 
 
 
           <div class="seasonal-calender mt-4">
-            <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">
-              Seasonal Calendar </h4>
 
-            <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-              <div class="">
-                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
-                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
-                  June 2024</p>
+            <div
+              class="absolute inset-0 bg-white top-0 z-50 bottom-0 right-0 left-0 bg-opacity-20 flex  lg:items-center lg:justify-center"
+              x-show="addSeasonal">
+              <div class="w-full lg:w-2/5 p-8 flex flex-col gap-4 bg-white  border border-gray-1/30 rounded shadow ">
+
+                <div class="absolute" x-on:click="addSeasonal = false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="black"
+                      fill-opacity="0.54" />
+                  </svg>
+                </div>
+                <h4 class="font-semibold text-2xl font-Poppins text-center text">
+                  <span x-text="farmType=='add' ? 'Add' : 'Edit'">Edit</span> Period
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <select type="text" x-show="farmType !='add'"
+                    class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                    placeholder="Commodity">
+                    <option value="">Farm</option>
+                  </select>
+
+
+                  <input type="text" x-show="farmType =='add'"
+                    class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                    placeholder="Season">
+
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+                    <input type="date"
+                      class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                      placeholder="Start date">
+                  </div>
+
+                  <input type="date"
+                    class="py-[12.5px] border border-[#D9D9D9] bg-[#FAFDFF] rounded-md px-[14px] text-[#4F5253] text-sm"
+                    placeholder="End date">
+                </div>
+
+                <input type="button" class="py-[12.5px]  bg-primary rounded-md px-[14px] text-white font-bold text-sm"
+                  placeholder="SUBMIT" value="UPDATE">
               </div>
-
             </div>
-
-            <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-              <div class="">
-                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
-                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
-                  June 2024</p>
-              </div>
-
-            </div>
-
-            <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
-              <div class="">
-                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
-                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
-                  June 2024</p>
-              </div>
-
-            </div>
-
-
-            <div class="flex w-full flex-col lg:flex-row lg:justify-end gap-4 lg:items-center mt-6">
-              <button
-                class=" max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md">EDIT</button>
-              <button
-                class="max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md">ADD
-                PERIOD</button>
-            </div>
-
-
           </div>
-        </div>
 
-        <div class="tab-4 pt-[32px]  lg:px-4 py-4" x-show="activeTab=='contact'">
-          <div class="space-y-2">
+          <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">
+            Seasonal Calendar </h4>
 
-            <h5 class="text-[#1C1C1C] text-base font-medium font-Poppins">Need help? Contact us</h5>
-
-            <p class="text-sm font-Poppins leading-[20px] text-[#1C1C1C] tracking-[0.25px]">We’d love to
-              hear your thoughts on this platform</p>
-
+          <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
             <div class="">
-              <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">CONTACT
-                US</a>
+              <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
+              <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
+                June 2024</p>
+            </div>
+
+          </div>
+
+          <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+            <div class="">
+              <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
+              <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
+                June 2024</p>
+            </div>
+
+          </div>
+
+          <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+            <div class="">
+              <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">Planting season</h4>
+              <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">1st Jan 2024 -1st
+                June 2024</p>
             </div>
 
           </div>
 
 
-          <div class="flex flex-col mt-7 gap-4">
-            <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">PRIVACY
-              POLICY</a>
-            <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">TERMS AND
-              CONDITIONS</a>
+          <div class="flex w-full flex-col lg:flex-row lg:justify-end gap-4 lg:items-center mt-6">
+            <button
+              class=" max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold text-primary border-primary rounded-md"
+              x-on:click="addSeasonal = true;farmType='edit'">EDIT</button>
+            <button
+              class="max-sm:w-full text-center justify-center items-center max-sm:flex px-4 py-[10px] border font-Poppins uppercase font-bold bg-primary text-white border-primary rounded-md"
+              x-on:click="addSeasonal = true;farmType='add'">ADD
+              PERIOD</button>
           </div>
 
+
         </div>
+  </div>
+
+  <div class="tab-4 pt-[32px]  lg:px-4 py-4" x-show="activeTab=='contact'">
+    <div class="space-y-2">
+
+      <h5 class="text-[#1C1C1C] text-base font-medium font-Poppins">Need help? Contact us</h5>
+
+      <p class="text-sm font-Poppins leading-[20px] text-[#1C1C1C] tracking-[0.25px]">We’d love to
+        hear your thoughts on this platform</p>
+
+      <div class="">
+        <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">CONTACT
+          US</a>
+      </div>
+
+    </div>
+
+
+    <div class="flex flex-col mt-7 gap-4">
+      <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">PRIVACY
+        POLICY</a>
+      <a href="" class="underline font-semibold text-sm font-Poppins text-primary uppercase">TERMS AND
+        CONDITIONS</a>
+    </div>
+
+  </div>
   </div>
   </section>
   </main>
