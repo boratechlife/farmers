@@ -3379,6 +3379,11 @@ select{
     padding-right: 1.25rem;
   }
 
+  .lg\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .lg\:pb-0{
     padding-bottom: 0px;
   }
@@ -3450,6 +3455,11 @@ select{
   .lg\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .lg\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .lg\:font-semibold{
