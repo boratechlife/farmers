@@ -1,510 +1,476 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="/dist/output.css" rel="stylesheet" />
-    <title>Market Prices - Farmers</title>
-  </head>
-  <body class="h-full font-poppins">
-    <div class="h-full lg:grid lg:grid-cols-[15.125rem_1fr] bg-light">
-      <aside class="lg:border-r-[0.1px] border-gray-1/10 lg:h-full">
-        <div class="pt-5 px-5 lg:px-10 lg:pb-8 flex justify-between">
-          <a href="/">
-            <img
-              class="h-6 w-auto lg:h-auto lg:mx-auto"
-              src="/public/images/ctn_logo.png"
-              width="160"
-              height="55"
-              alt="logo"
-            />
-          </a>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link href="/dist/output.css" rel="stylesheet" />
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <title>Market Prices - Farmers</title>
+</head>
+
+<body class="h-full font-poppins relative" x-data="{ openNotification: false }">
+
+
+  <div class="h-full lg:grid lg:grid-cols-[15.125rem_1fr] bg-light">
+    <aside class="lg:border-r-[0.1px] border-gray-1/10 lg:h-full">
+      <div class="pt-5 px-5 lg:px-10 lg:pb-8 flex justify-between">
+        <a href="/">
+          <img class="h-6 w-auto lg:h-auto lg:mx-auto" src="/public/images/ctn_logo.png" width="160" height="55"
+            alt="logo" />
+        </a>
+
+        <div class="flex gap-4 lg:hidden">
+          <div class="notifition relative group">
+
+            <div class="fixed  hidden group-hover:block w-full transform left-0  mt-10 p-4 bg-white">
+              <div class="flex justify-between mb-4">
+
+                <h4 class="text-lg font-bold tracking-[0.25px] text-[#061C3D]">Notifications </h4>
+
+
+                <a href="#" class="lowercase font-semibold text-sm font-Poppins text-[#359744]">MARK ALL AS READ</a>
+              </div>
+
+              <ul class="bg-white divide-y">
+                <li class="flex w-full relative py-2 notification-active">
+                  <div class="absolute -top-1 right-2">
+                    <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.5 13L13.5 23M13.5 13L23.5 23" stroke="#667085" stroke-width="1.66667"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </div>
+                  <div href="" class="flex w-full ">
+                    <div class="w-1/4 flex items-center justify-center text-3xl">
+                      <span>
+                        👋🏾
+                      </span>
+                    </div>
+                    <div class="flex-1">
+
+                      <h4 class="text-[#101828] font-semibold text-sm">Welcome to CTN</h4>
+
+
+
+                      <p class="text-[#475467] text-sm ">We are excited to have you onboard. </p>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="flex w-full relative py-2 ">
+                  <div class="absolute -top-1 right-2">
+                    <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.5 13L13.5 23M13.5 13L23.5 23" stroke="#667085" stroke-width="1.66667"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </div>
+                  <div href="" class="flex w-full ">
+                    <div class="w-1/4 flex items-center justify-center text-3xl">
+                      <img src="./images/rains.png" alt="">
+                    </div>
+                    <div class="flex-1">
+
+                      <h4 class="text-[#101828] font-semibold text-sm">Heavy rains expected</h4>
+                      <p class="text-[#475467] text-sm  w-10/12">Heavy rains expected in your region. Learn how to take
+                        care of
+                        your crops during rainy seasons. </p>
+                      <div class="mt-2">
+                        <a href="#" class="text-sm font-semibold text-primary">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M12 18.5q.625 0 1.063-.437T13.5 17h-3q0 .625.438 1.063T12 18.5M7 16h10v-2h-1v-2.6q0-1.525-.788-2.787T13 7v-.5q0-.425-.288-.712T12 5.5q-.425 0-.712.288T11 6.5V7q-1.425.35-2.212 1.613T8 11.4V14H7zm5 6q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22" />
+              </svg>
+            </span>
+          </div>
           <button id="menu-btn" class="lg:hidden">
-            <svg
-              class="h-7 aspect-auto"
-              viewBox="0 0 26 27"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+
+            <svg class="h-7 aspect-auto" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d_324_9078)">
                 <path
                   d="M5 18.5H21C21.55 18.5 22 18.05 22 17.5C22 16.95 21.55 16.5 21 16.5H5C4.45 16.5 4 16.95 4 17.5C4 18.05 4.45 18.5 5 18.5ZM5 13.5H21C21.55 13.5 22 13.05 22 12.5C22 11.95 21.55 11.5 21 11.5H5C4.45 11.5 4 11.95 4 12.5C4 13.05 4.45 13.5 5 13.5ZM4 7.5C4 8.05 4.45 8.5 5 8.5H21C21.55 8.5 22 8.05 22 7.5C22 6.95 21.55 6.5 21 6.5H5C4.45 6.5 4 6.95 4 7.5Z"
-                  fill="#1C1C1C"
-                />
+                  fill="#1C1C1C" />
               </g>
               <defs>
-                <filter
-                  id="filter0_d_324_9078"
-                  x="-3"
-                  y="0.5"
-                  width="32"
-                  height="32"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
+                <filter id="filter0_d_324_9078" x="-3" y="0.5" width="32" height="32" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
                   <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha" />
                   <feOffset dy="4" />
                   <feGaussianBlur stdDeviation="2" />
                   <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_324_9078"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_324_9078"
-                    result="shape"
-                  />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_324_9078" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_324_9078" result="shape" />
                 </filter>
               </defs>
             </svg>
           </button>
         </div>
 
-        <ul
-          id="links"
-          class="data-[active='true']:block data-[active='false']:hidden pt-5 lg:pt-0 lg:data-[active='false']:block lg:block"
-        >
-          <li>
-            <a
-              href="/src/index.html"
-              class="py-4 flex items-center gap-6 px-7 bg-success-2 text-success-1 font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-current"
-                viewBox="0 0 18 18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16 2V4H12V2H16ZM6 2V8H2V2H6ZM16 10V16H12V10H16ZM6 14V16H2V14H6ZM18 0H10V6H18V0ZM8 0H0V10H8V0ZM18 8H10V18H18V8ZM8 12H0V18H8V12Z"
-                />
-              </svg>
+      </div>
 
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/weather-insights.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6 14.03C6.26522 14.03 6.51957 14.1354 6.70711 14.3229C6.89464 14.5105 7 14.7648 7 15.03C7 15.58 6.55 16.03 6 16.03C3.24 16.03 1 13.79 1 11.03C1 8.27003 3.24 6.03003 6 6.03003C7 3.68003 9.3 2.03003 12 2.03003C15.43 2.03003 18.24 4.69003 18.5 8.06003L19 8.03003C20.0609 8.03003 21.0783 8.45146 21.8284 9.2016C22.5786 9.95175 23 10.9692 23 12.03C23 14.23 21.21 16.03 19 16.03H18C17.45 16.03 17 15.58 17 15.03C17 14.47 17.45 14.03 18 14.03H19C19.5304 14.03 20.0391 13.8193 20.4142 13.4442C20.7893 13.0692 21 12.5605 21 12.03C21 11.4996 20.7893 10.9909 20.4142 10.6158C20.0391 10.2407 19.5304 10.03 19 10.03H17V9.03003C17 6.27003 14.76 4.03003 12 4.03003C9.5 4.03003 7.45 5.84003 7.06 8.21003C6.73 8.09003 6.37 8.03003 6 8.03003C5.20435 8.03003 4.44129 8.3461 3.87868 8.90871C3.31607 9.47132 3 10.2344 3 11.03C3 11.8257 3.31607 12.5887 3.87868 13.1514C4.44129 13.714 5.20435 14.03 6 14.03ZM12 14.15C12.18 14.39 12.37 14.66 12.56 14.94C13 15.56 14 17.03 14 18C14 19.11 13.1 20 12 20C11.4696 20 10.9609 19.7893 10.5858 19.4142C10.2107 19.0392 10 18.5305 10 18C10 17.03 11 15.56 11.44 14.94C11.63 14.66 11.82 14.4 12 14.15ZM12 11.03L11.5 11.59C11.5 11.59 10.65 12.55 9.79 13.81C8.93 15.06 8 16.56 8 18C8 19.0609 8.42143 20.0783 9.17157 20.8285C9.92172 21.5786 10.9391 22 12 22C13.0609 22 14.0783 21.5786 14.8284 20.8285C15.5786 20.0783 16 19.0609 16 18C16 16.56 15.07 15.06 14.21 13.81C13.35 12.55 12.5 11.59 12.5 11.59"
-                />
-              </svg>
+      <ul id="links"
+        class="data-[active='true']:block data-[active='false']:hidden pt-5 lg:pt-0 lg:data-[active='false']:block lg:block">
+        <li>
+          <a href="/src/index.html"
+            class="py-4 flex items-center gap-6 px-7 bg-success-2 text-success-1 font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-current" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16 2V4H12V2H16ZM6 2V8H2V2H6ZM16 10V16H12V10H16ZM6 14V16H2V14H6ZM18 0H10V6H18V0ZM8 0H0V10H8V0ZM18 8H10V18H18V8ZM8 12H0V18H8V12Z" />
+            </svg>
 
-              <span>Weather Insights</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/farm-input-price.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 19 18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 0C0.89 0 0 0.9 0 2V16C0 16.5304 0.210714 17.0391 0.585786 17.4142C0.960859 17.7893 1.46957 18 2 18H16C16.5304 18 17.0391 17.7893 17.4142 17.4142C17.7893 17.0391 18 16.5304 18 16V13.72C18.59 13.37 19 12.74 19 12V6C19 5.26 18.59 4.63 18 4.28V2C18 1.46957 17.7893 0.960859 17.4142 0.585786C17.0391 0.210714 16.5304 0 16 0H2ZM2 2H16V4H10C9.46957 4 8.96086 4.21071 8.58579 4.58579C8.21071 4.96086 8 5.46957 8 6V12C8 12.5304 8.21071 13.0391 8.58579 13.4142C8.96086 13.7893 9.46957 14 10 14H16V16H2V2ZM10 6H17V12H10V6ZM13 7.5C12.6022 7.5 12.2206 7.65804 11.9393 7.93934C11.658 8.22064 11.5 8.60218 11.5 9C11.5 9.39782 11.658 9.77936 11.9393 10.0607C12.2206 10.342 12.6022 10.5 13 10.5C13.3978 10.5 13.7794 10.342 14.0607 10.0607C14.342 9.77936 14.5 9.39782 14.5 9C14.5 8.60218 14.342 8.22064 14.0607 7.93934C13.7794 7.65804 13.3978 7.5 13 7.5Z"
-                />
-              </svg>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/weather-insights.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6 14.03C6.26522 14.03 6.51957 14.1354 6.70711 14.3229C6.89464 14.5105 7 14.7648 7 15.03C7 15.58 6.55 16.03 6 16.03C3.24 16.03 1 13.79 1 11.03C1 8.27003 3.24 6.03003 6 6.03003C7 3.68003 9.3 2.03003 12 2.03003C15.43 2.03003 18.24 4.69003 18.5 8.06003L19 8.03003C20.0609 8.03003 21.0783 8.45146 21.8284 9.2016C22.5786 9.95175 23 10.9692 23 12.03C23 14.23 21.21 16.03 19 16.03H18C17.45 16.03 17 15.58 17 15.03C17 14.47 17.45 14.03 18 14.03H19C19.5304 14.03 20.0391 13.8193 20.4142 13.4442C20.7893 13.0692 21 12.5605 21 12.03C21 11.4996 20.7893 10.9909 20.4142 10.6158C20.0391 10.2407 19.5304 10.03 19 10.03H17V9.03003C17 6.27003 14.76 4.03003 12 4.03003C9.5 4.03003 7.45 5.84003 7.06 8.21003C6.73 8.09003 6.37 8.03003 6 8.03003C5.20435 8.03003 4.44129 8.3461 3.87868 8.90871C3.31607 9.47132 3 10.2344 3 11.03C3 11.8257 3.31607 12.5887 3.87868 13.1514C4.44129 13.714 5.20435 14.03 6 14.03ZM12 14.15C12.18 14.39 12.37 14.66 12.56 14.94C13 15.56 14 17.03 14 18C14 19.11 13.1 20 12 20C11.4696 20 10.9609 19.7893 10.5858 19.4142C10.2107 19.0392 10 18.5305 10 18C10 17.03 11 15.56 11.44 14.94C11.63 14.66 11.82 14.4 12 14.15ZM12 11.03L11.5 11.59C11.5 11.59 10.65 12.55 9.79 13.81C8.93 15.06 8 16.56 8 18C8 19.0609 8.42143 20.0783 9.17157 20.8285C9.92172 21.5786 10.9391 22 12 22C13.0609 22 14.0783 21.5786 14.8284 20.8285C15.5786 20.0783 16 19.0609 16 18C16 16.56 15.07 15.06 14.21 13.81C13.35 12.55 12.5 11.59 12.5 11.59" />
+            </svg>
 
-              <span>Farm input prices </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/profit_losses.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 22 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 0H22V12H4V0ZM13 3C13.7956 3 14.5587 3.31607 15.1213 3.87868C15.6839 4.44129 16 5.20435 16 6C16 6.79565 15.6839 7.55871 15.1213 8.12132C14.5587 8.68393 13.7956 9 13 9C12.2044 9 11.4413 8.68393 10.8787 8.12132C10.3161 7.55871 10 6.79565 10 6C10 5.20435 10.3161 4.44129 10.8787 3.87868C11.4413 3.31607 12.2044 3 13 3ZM8 2C8 2.53043 7.78929 3.03914 7.41421 3.41421C7.03914 3.78929 6.53043 4 6 4V8C6.53043 8 7.03914 8.21071 7.41421 8.58579C7.78929 8.96086 8 9.46957 8 10H18C18 9.46957 18.2107 8.96086 18.5858 8.58579C18.9609 8.21071 19.4696 8 20 8V4C19.4696 4 18.9609 3.78929 18.5858 3.41421C18.2107 3.03914 18 2.53043 18 2H8ZM0 4H2V14H18V16H0V4Z"
-                />
-              </svg>
+            <span>Weather Insights</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/farm-input-price.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 19 18"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2 0C0.89 0 0 0.9 0 2V16C0 16.5304 0.210714 17.0391 0.585786 17.4142C0.960859 17.7893 1.46957 18 2 18H16C16.5304 18 17.0391 17.7893 17.4142 17.4142C17.7893 17.0391 18 16.5304 18 16V13.72C18.59 13.37 19 12.74 19 12V6C19 5.26 18.59 4.63 18 4.28V2C18 1.46957 17.7893 0.960859 17.4142 0.585786C17.0391 0.210714 16.5304 0 16 0H2ZM2 2H16V4H10C9.46957 4 8.96086 4.21071 8.58579 4.58579C8.21071 4.96086 8 5.46957 8 6V12C8 12.5304 8.21071 13.0391 8.58579 13.4142C8.96086 13.7893 9.46957 14 10 14H16V16H2V2ZM10 6H17V12H10V6ZM13 7.5C12.6022 7.5 12.2206 7.65804 11.9393 7.93934C11.658 8.22064 11.5 8.60218 11.5 9C11.5 9.39782 11.658 9.77936 11.9393 10.0607C12.2206 10.342 12.6022 10.5 13 10.5C13.3978 10.5 13.7794 10.342 14.0607 10.0607C14.342 9.77936 14.5 9.39782 14.5 9C14.5 8.60218 14.342 8.22064 14.0607 7.93934C13.7794 7.65804 13.3978 7.5 13 7.5Z" />
+            </svg>
 
-              <span>Profit/Losses </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/unit_cost.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 18 18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16V2C18 0.9 17.1 0 16 0ZM16 16H2V2H16V16ZM3.2 4.7H8.2V6.2H3.2V4.7ZM10 12.8H15V14.3H10V12.8ZM10 10.2H15V11.7H10V10.2ZM5 15H6.5V13H8.5V11.5H6.5V9.5H5V11.5H3V13H5V15ZM11.1 7.9L12.5 6.5L13.9 7.9L15 6.9L13.6 5.5L15 4.1L13.9 3L12.5 4.4L11.1 3L10 4.1L11.4 5.5L10 6.9L11.1 7.9Z"
-                />
-              </svg>
+            <span>Farm input prices </span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/profit_losses.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 22 16"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4 0H22V12H4V0ZM13 3C13.7956 3 14.5587 3.31607 15.1213 3.87868C15.6839 4.44129 16 5.20435 16 6C16 6.79565 15.6839 7.55871 15.1213 8.12132C14.5587 8.68393 13.7956 9 13 9C12.2044 9 11.4413 8.68393 10.8787 8.12132C10.3161 7.55871 10 6.79565 10 6C10 5.20435 10.3161 4.44129 10.8787 3.87868C11.4413 3.31607 12.2044 3 13 3ZM8 2C8 2.53043 7.78929 3.03914 7.41421 3.41421C7.03914 3.78929 6.53043 4 6 4V8C6.53043 8 7.03914 8.21071 7.41421 8.58579C7.78929 8.96086 8 9.46957 8 10H18C18 9.46957 18.2107 8.96086 18.5858 8.58579C18.9609 8.21071 19.4696 8 20 8V4C19.4696 4 18.9609 3.78929 18.5858 3.41421C18.2107 3.03914 18 2.53043 18 2H8ZM0 4H2V14H18V16H0V4Z" />
+            </svg>
 
-              <span>Unit cost calculator </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/planning_budgetting_1.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 20 15"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 0H18V3.1C16.96 3.1 16.35 3.72 16.2 3.87L16.19 3.89L16 4.07V4C15.47 4 14.96 3.79 14.59 3.41C14.21 3.04 14 2.53 14 2H4C4 2.53 3.79 3.04 3.41 3.41C3.04 3.79 2.53 4 2 4V8C2.53 8 3.04 8.21 3.41 8.59C3.79 8.96 4 9.47 4 10H10.07L8.07 12H0V0ZM9 3C9.8 3 10.56 3.32 11.12 3.88C11.68 4.44 12 5.2 12 6C12 6.8 11.68 7.56 11.12 8.12C10.56 8.68 9.8 9 9 9C8.2 9 7.44 8.68 6.88 8.12C6.32 7.56 6 6.8 6 6C6 5.2 6.32 4.44 6.88 3.88C7.44 3.32 8.2 3 9 3ZM19.7 6.6L18.4 5.3C18.3 5.2 18.2 5.1 18 5.1C17.8 5.1 17.7 5.2 17.6 5.3L16.6 6.3L18.7 8.4L19.7 7.4C19.9 7.2 19.9 6.8 19.7 6.6ZM12.1 15L18.1 8.9L16.1 6.8L10 12.9V15H12.1Z"
-                />
-              </svg>
+            <span>Profit/Losses </span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/unit_cost.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 18 18"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16V2C18 0.9 17.1 0 16 0ZM16 16H2V2H16V16ZM3.2 4.7H8.2V6.2H3.2V4.7ZM10 12.8H15V14.3H10V12.8ZM10 10.2H15V11.7H10V10.2ZM5 15H6.5V13H8.5V11.5H6.5V9.5H5V11.5H3V13H5V15ZM11.1 7.9L12.5 6.5L13.9 7.9L15 6.9L13.6 5.5L15 4.1L13.9 3L12.5 4.4L11.1 3L10 4.1L11.4 5.5L10 6.9L11.1 7.9Z" />
+            </svg>
 
-              <span>Planning and budgeting</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/agricultural_advice.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 22 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21.9999 2.1V0.3L20.1999 0.0999999C20.0999 0.0999999 19.4999 0 18.4999 0C14.3999 0 11.3999 1.2 9.6999 3.3C8.3999 2.5 6.5999 2 4.4999 2C3.4999 2 2.7999 2.1 2.7999 2.1L0.899902 2.4L0.999902 4.1C1.0999 7.1 2.5999 12.8 7.7999 12.8C7.8999 12.8 7.8999 12.8 7.9999 12.8V16.2C4.1999 16.7 0.999902 18 0.999902 18V20H20.9999V18C20.9999 18 17.7999 16.7 13.9999 16.2V13C20.2999 12.9 21.9999 5.8 21.9999 2.1ZM10.9999 16C10.6999 16 10.2999 16 9.9999 16V10.4C9.9999 10.4 9.7999 7 6.9999 7C6.9999 7 8.4999 7.8 8.8999 10.7C8.4999 10.8 8.0999 10.8 7.7999 10.8C3.1999 10.8 2.9999 4.1 2.9999 4.1C2.9999 4.1 3.5999 4 4.4999 4C6.3999 4 9.4999 4.4 10.3999 7.1C10.8999 2.6 15.9999 2 18.4999 2C19.3999 2 19.9999 2.1 19.9999 2.1C19.9999 2.1 19.9999 11.1 13.6999 11.1C13.4999 11.1 13.1999 11.1 12.9999 11.1C12.9999 9.1 14.9999 6.1 14.9999 6.1C11.9999 7.1 11.9999 11 11.9999 11V16C11.6999 16 11.2999 16 10.9999 16Z"
-                />
-              </svg>
+            <span>Unit cost calculator </span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/planning_budgetting_1.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 20 15"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0 0H18V3.1C16.96 3.1 16.35 3.72 16.2 3.87L16.19 3.89L16 4.07V4C15.47 4 14.96 3.79 14.59 3.41C14.21 3.04 14 2.53 14 2H4C4 2.53 3.79 3.04 3.41 3.41C3.04 3.79 2.53 4 2 4V8C2.53 8 3.04 8.21 3.41 8.59C3.79 8.96 4 9.47 4 10H10.07L8.07 12H0V0ZM9 3C9.8 3 10.56 3.32 11.12 3.88C11.68 4.44 12 5.2 12 6C12 6.8 11.68 7.56 11.12 8.12C10.56 8.68 9.8 9 9 9C8.2 9 7.44 8.68 6.88 8.12C6.32 7.56 6 6.8 6 6C6 5.2 6.32 4.44 6.88 3.88C7.44 3.32 8.2 3 9 3ZM19.7 6.6L18.4 5.3C18.3 5.2 18.2 5.1 18 5.1C17.8 5.1 17.7 5.2 17.6 5.3L16.6 6.3L18.7 8.4L19.7 7.4C19.9 7.2 19.9 6.8 19.7 6.6ZM12.1 15L18.1 8.9L16.1 6.8L10 12.9V15H12.1Z" />
+            </svg>
 
-              <span>Agriculture advice</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/chat_messages.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 4H20V16H5.17L4 17.17V4ZM4 2C2.9 2 2.01 2.9 2.01 4L2 22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2H4ZM6 12H14V14H6V12ZM6 9H18V11H6V9ZM6 6H18V8H6V6Z"
-                />
-              </svg>
+            <span>Planning and budgeting</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/agricultural_advice.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 22 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.9999 2.1V0.3L20.1999 0.0999999C20.0999 0.0999999 19.4999 0 18.4999 0C14.3999 0 11.3999 1.2 9.6999 3.3C8.3999 2.5 6.5999 2 4.4999 2C3.4999 2 2.7999 2.1 2.7999 2.1L0.899902 2.4L0.999902 4.1C1.0999 7.1 2.5999 12.8 7.7999 12.8C7.8999 12.8 7.8999 12.8 7.9999 12.8V16.2C4.1999 16.7 0.999902 18 0.999902 18V20H20.9999V18C20.9999 18 17.7999 16.7 13.9999 16.2V13C20.2999 12.9 21.9999 5.8 21.9999 2.1ZM10.9999 16C10.6999 16 10.2999 16 9.9999 16V10.4C9.9999 10.4 9.7999 7 6.9999 7C6.9999 7 8.4999 7.8 8.8999 10.7C8.4999 10.8 8.0999 10.8 7.7999 10.8C3.1999 10.8 2.9999 4.1 2.9999 4.1C2.9999 4.1 3.5999 4 4.4999 4C6.3999 4 9.4999 4.4 10.3999 7.1C10.8999 2.6 15.9999 2 18.4999 2C19.3999 2 19.9999 2.1 19.9999 2.1C19.9999 2.1 19.9999 11.1 13.6999 11.1C13.4999 11.1 13.1999 11.1 12.9999 11.1C12.9999 9.1 14.9999 6.1 14.9999 6.1C11.9999 7.1 11.9999 11 11.9999 11V16C11.6999 16 11.2999 16 10.9999 16Z" />
+            </svg>
 
-              <span>Messages</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/src/settings.html"
-              class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium"
-            >
-              <svg
-                class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19.4301 12.98C19.4701 12.66 19.5001 12.34 19.5001 12C19.5001 11.66 19.4701 11.34 19.4301 11.02L21.5401 9.37C21.7301 9.22 21.7801 8.95 21.6601 8.73L19.6601 5.27C19.5701 5.11 19.4001 5.02 19.2201 5.02C19.1601 5.02 19.1001 5.03 19.0501 5.05L16.5601 6.05C16.0401 5.65 15.4801 5.32 14.8701 5.07L14.4901 2.42C14.4601 2.18 14.2501 2 14.0001 2H10.0001C9.75008 2 9.54008 2.18 9.51008 2.42L9.13008 5.07C8.52008 5.32 7.96008 5.66 7.44008 6.05L4.95008 5.05C4.89008 5.03 4.83008 5.02 4.77008 5.02C4.60008 5.02 4.43008 5.11 4.34008 5.27L2.34008 8.73C2.21008 8.95 2.27008 9.22 2.46008 9.37L4.57008 11.02C4.53008 11.34 4.50008 11.67 4.50008 12C4.50008 12.33 4.53008 12.66 4.57008 12.98L2.46008 14.63C2.27008 14.78 2.22008 15.05 2.34008 15.27L4.34008 18.73C4.43008 18.89 4.60008 18.98 4.78008 18.98C4.84008 18.98 4.90008 18.97 4.95008 18.95L7.44008 17.95C7.96008 18.35 8.52008 18.68 9.13008 18.93L9.51008 21.58C9.54008 21.82 9.75008 22 10.0001 22H14.0001C14.2501 22 14.4601 21.82 14.4901 21.58L14.8701 18.93C15.4801 18.68 16.0401 18.34 16.5601 17.95L19.0501 18.95C19.1101 18.97 19.1701 18.98 19.2301 18.98C19.4001 18.98 19.5701 18.89 19.6601 18.73L21.6601 15.27C21.7801 15.05 21.7301 14.78 21.5401 14.63L19.4301 12.98ZM17.4501 11.27C17.4901 11.58 17.5001 11.79 17.5001 12C17.5001 12.21 17.4801 12.43 17.4501 12.73L17.3101 13.86L18.2001 14.56L19.2801 15.4L18.5801 16.61L17.3101 16.1L16.2701 15.68L15.3701 16.36C14.9401 16.68 14.5301 16.92 14.1201 17.09L13.0601 17.52L12.9001 18.65L12.7001 20H11.3001L11.1101 18.65L10.9501 17.52L9.89008 17.09C9.46008 16.91 9.06008 16.68 8.66008 16.38L7.75008 15.68L6.69008 16.11L5.42008 16.62L4.72008 15.41L5.80008 14.57L6.69008 13.87L6.55008 12.74C6.52008 12.43 6.50008 12.2 6.50008 12C6.50008 11.8 6.52008 11.57 6.55008 11.27L6.69008 10.14L5.80008 9.44L4.72008 8.6L5.42008 7.39L6.69008 7.9L7.73008 8.32L8.63008 7.64C9.06008 7.32 9.47008 7.08 9.88008 6.91L10.9401 6.48L11.1001 5.35L11.3001 4H12.6901L12.8801 5.35L13.0401 6.48L14.1001 6.91C14.5301 7.09 14.9301 7.32 15.3301 7.62L16.2401 8.32L17.3001 7.89L18.5701 7.38L19.2701 8.59L18.2001 9.44L17.3101 10.14L17.4501 11.27ZM12.0001 8C9.79008 8 8.00008 9.79 8.00008 12C8.00008 14.21 9.79008 16 12.0001 16C14.2101 16 16.0001 14.21 16.0001 12C16.0001 9.79 14.2101 8 12.0001 8ZM12.0001 14C10.9001 14 10.0001 13.1 10.0001 12C10.0001 10.9 10.9001 10 12.0001 10C13.1001 10 14.0001 10.9 14.0001 12C14.0001 13.1 13.1001 14 12.0001 14Z"
-                />
-              </svg>
+            <span>Agriculture advice</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/chat_messages.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4 4H20V16H5.17L4 17.17V4ZM4 2C2.9 2 2.01 2.9 2.01 4L2 22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2H4ZM6 12H14V14H6V12ZM6 9H18V11H6V9ZM6 6H18V8H6V6Z" />
+            </svg>
 
-              <span>Settings</span>
-            </a>
-          </li>
-        </ul>
-      </aside>
-      <main class="h-full px-5 lg:pr-0 lg:pl-8 overflow-y-auto">
-        <div class="hidden lg:block pt-6 px-4">
-          <div class="flex justify-end items-center">
-            <div class="pr-20 flex items-center gap-3">
-              <img
-                class="rounded-full"
-                src="/public/images/user.png"
-                width="42"
-                height="42"
-                alt="Brian"
-              />
-              <span
-                class="font-medium text-base font-poppins pr-7 text-tertiary"
-                >Brian</span
-              >
+            <span>Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="/src/settings.html"
+            class="group py-4 flex items-center gap-6 pl-7 pr-2 text-base bg-transparent transition-colors hover:bg-success-2 text-gray-1 hover:text-primary font-poppins font-medium">
+            <svg class="h-5 aspect-auto fill-gray-1 group-hover:fill-success-1" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.4301 12.98C19.4701 12.66 19.5001 12.34 19.5001 12C19.5001 11.66 19.4701 11.34 19.4301 11.02L21.5401 9.37C21.7301 9.22 21.7801 8.95 21.6601 8.73L19.6601 5.27C19.5701 5.11 19.4001 5.02 19.2201 5.02C19.1601 5.02 19.1001 5.03 19.0501 5.05L16.5601 6.05C16.0401 5.65 15.4801 5.32 14.8701 5.07L14.4901 2.42C14.4601 2.18 14.2501 2 14.0001 2H10.0001C9.75008 2 9.54008 2.18 9.51008 2.42L9.13008 5.07C8.52008 5.32 7.96008 5.66 7.44008 6.05L4.95008 5.05C4.89008 5.03 4.83008 5.02 4.77008 5.02C4.60008 5.02 4.43008 5.11 4.34008 5.27L2.34008 8.73C2.21008 8.95 2.27008 9.22 2.46008 9.37L4.57008 11.02C4.53008 11.34 4.50008 11.67 4.50008 12C4.50008 12.33 4.53008 12.66 4.57008 12.98L2.46008 14.63C2.27008 14.78 2.22008 15.05 2.34008 15.27L4.34008 18.73C4.43008 18.89 4.60008 18.98 4.78008 18.98C4.84008 18.98 4.90008 18.97 4.95008 18.95L7.44008 17.95C7.96008 18.35 8.52008 18.68 9.13008 18.93L9.51008 21.58C9.54008 21.82 9.75008 22 10.0001 22H14.0001C14.2501 22 14.4601 21.82 14.4901 21.58L14.8701 18.93C15.4801 18.68 16.0401 18.34 16.5601 17.95L19.0501 18.95C19.1101 18.97 19.1701 18.98 19.2301 18.98C19.4001 18.98 19.5701 18.89 19.6601 18.73L21.6601 15.27C21.7801 15.05 21.7301 14.78 21.5401 14.63L19.4301 12.98ZM17.4501 11.27C17.4901 11.58 17.5001 11.79 17.5001 12C17.5001 12.21 17.4801 12.43 17.4501 12.73L17.3101 13.86L18.2001 14.56L19.2801 15.4L18.5801 16.61L17.3101 16.1L16.2701 15.68L15.3701 16.36C14.9401 16.68 14.5301 16.92 14.1201 17.09L13.0601 17.52L12.9001 18.65L12.7001 20H11.3001L11.1101 18.65L10.9501 17.52L9.89008 17.09C9.46008 16.91 9.06008 16.68 8.66008 16.38L7.75008 15.68L6.69008 16.11L5.42008 16.62L4.72008 15.41L5.80008 14.57L6.69008 13.87L6.55008 12.74C6.52008 12.43 6.50008 12.2 6.50008 12C6.50008 11.8 6.52008 11.57 6.55008 11.27L6.69008 10.14L5.80008 9.44L4.72008 8.6L5.42008 7.39L6.69008 7.9L7.73008 8.32L8.63008 7.64C9.06008 7.32 9.47008 7.08 9.88008 6.91L10.9401 6.48L11.1001 5.35L11.3001 4H12.6901L12.8801 5.35L13.0401 6.48L14.1001 6.91C14.5301 7.09 14.9301 7.32 15.3301 7.62L16.2401 8.32L17.3001 7.89L18.5701 7.38L19.2701 8.59L18.2001 9.44L17.3101 10.14L17.4501 11.27ZM12.0001 8C9.79008 8 8.00008 9.79 8.00008 12C8.00008 14.21 9.79008 16 12.0001 16C14.2101 16 16.0001 14.21 16.0001 12C16.0001 9.79 14.2101 8 12.0001 8ZM12.0001 14C10.9001 14 10.0001 13.1 10.0001 12C10.0001 10.9 10.9001 10 12.0001 10C13.1001 10 14.0001 10.9 14.0001 12C14.0001 13.1 13.1001 14 12.0001 14Z" />
+            </svg>
+
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main class="h-full px-5 lg:pr-0 lg:pl-8 overflow-y-auto">
+      <div class="hidden lg:block pt-6 px-4">
+        <div class="flex justify-end items-center gap-10">
+          <div class="notifition relative group">
+
+            <div
+              class="absolute  hidden group-hover:block w-[500px] transform -translate-x-[450px] top-full p-4 bg-white">
+              <div class="flex justify-between mb-4">
+
+                <h4 class="text-lg font-bold tracking-[0.25px] text-[#061C3D]">Notifications </h4>
+
+
+                <a href="#" class="lowercase font-semibold text-sm font-Poppins text-[#359744]">MARK ALL AS READ</a>
+              </div>
+
+              <ul class="bg-white divide-y">
+                <li class="flex w-full relative py-2 notification-active">
+                  <div class="absolute -top-1 right-2">
+                    <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.5 13L13.5 23M13.5 13L23.5 23" stroke="#667085" stroke-width="1.66667"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </div>
+                  <div href="" class="flex w-full ">
+                    <div class="w-1/4 flex items-center justify-center text-3xl">
+                      <span>
+                        👋🏾
+                      </span>
+                    </div>
+                    <div class="flex-1">
+
+                      <h4 class="text-[#101828] font-semibold text-sm">Welcome to CTN</h4>
+
+
+
+                      <p class="text-[#475467] text-sm ">We are excited to have you onboard. </p>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="flex w-full relative py-2 ">
+                  <div class="absolute -top-1 right-2">
+                    <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.5 13L13.5 23M13.5 13L23.5 23" stroke="#667085" stroke-width="1.66667"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </div>
+                  <div href="" class="flex w-full ">
+                    <div class="w-1/4 flex items-center justify-center text-3xl">
+                      <img src="./images/rains.png" alt="">
+                    </div>
+                    <div class="flex-1">
+
+                      <h4 class="text-[#101828] font-semibold text-sm">Heavy rains expected</h4>
+                      <p class="text-[#475467] text-sm  w-10/12">Heavy rains expected in your region. Learn how to take
+                        care of
+                        your crops during rainy seasons. </p>
+                      <div class="mt-2">
+                        <a href="#" class="text-sm font-semibold text-primary">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
             </div>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M12 18.5q.625 0 1.063-.437T13.5 17h-3q0 .625.438 1.063T12 18.5M7 16h10v-2h-1v-2.6q0-1.525-.788-2.787T13 7v-.5q0-.425-.288-.712T12 5.5q-.425 0-.712.288T11 6.5V7q-1.425.35-2.212 1.613T8 11.4V14H7zm5 6q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22" />
+              </svg>
+            </span>
           </div>
-
-          <div class="mt-6 pl-8 pr-3.5">
-            <hr class="border-transparent border-0 h-px bg-gray-4" />
+          <div class="pr-20 flex items-center gap-3">
+            <img class="rounded-full" src="/public/images/user.png" width="42" height="42" alt="Brian" />
+            <span class="font-medium text-base font-poppins pr-7 text-tertiary">Brian</span>
           </div>
         </div>
 
-        <!-- ADD CONTENT HERE -->
-        <div class="w-full">
-          <div class="flex">
-            <img
-              src="./images/profile_cover.png"
-              class="w-full h-[192px] object-cover"
-              alt=""
-            />
+        <div class="mt-6 pl-8 pr-3.5">
+          <hr class="border-transparent border-0 h-px bg-gray-4" />
+        </div>
+      </div>
+
+      <!-- ADD CONTENT HERE -->
+      <div class="w-full mt-4">
+        <div class="flex">
+          <img src="./images/profile_cover.png" class="w-full h-[100px] lg:h-[192px] object-cover" alt="" />
+        </div>
+        <div class="-mt-10 lg:px-10">
+          <div class="h-[128px] aspect-square flex rounded-full">
+            <img src="./images/user.png" class="h-full w-full object-cover rounded-full" alt="" />
           </div>
-          <div class="-mt-10 px-10">
-            <div class="h-[128px] aspect-square flex rounded-full">
-              <img
-                src="./images/user.png"
-                class="h-full w-full object-cover rounded-full"
-                alt=""
-              />
-            </div>
-            <div class="mt-6">
-              <h4 class="text-[24px] font-medium font-Poppins text-black">
-                Brian
-              </h4>
+          <div class="mt-6">
+            <h4 class="text-[24px] font-medium font-Poppins text-black">
+              Brian
+            </h4>
 
-              <p class="text-sm font-Poppins text-black leading-[20px]">
-                0700123456
-              </p>
-              <p class="text-sm font-Poppins text-black leading-[20px]">
-                brian@gmail.com
-              </p>
-            </div>
+            <p class="text-sm font-Poppins text-black leading-[20px]">
+              0700123456
+            </p>
+            <p class="text-sm font-Poppins text-black leading-[20px]">
+              brian@gmail.com
+            </p>
+          </div>
 
-            <div class="tab-3 pt-[32px] w-1/2 py-4">
-              <h4
-                class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]"
-              >
-                Farm Details
-              </h4>
-              <div
-                class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]"
-              >
-                <div class="">
-                  <h4
-                    class="text-base font-semibold font-Poppins text-[#1C1C1C]"
-                  >
-                    Farm 1
-                  </h4>
-
-                  <p
-                    class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                  >
-                    10 ha
-                  </p>
-                  <p
-                    class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                  >
-                    Crop cultivation: Maize
-                  </p>
-                </div>
-
-                <div class="flex items-center">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
-                      fill="#1C1C1C"
-                    />
-                  </svg>
-
-                  <span class="text-sm font-Poppins text-[#1C1C1C]"
-                    >Nairobi. Kenya</span
-                  >
-                </div>
-              </div>
-
-              <div
-                class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]"
-              >
-                <div class="">
-                  <h4
-                    class="text-base font-semibold font-Poppins text-[#1C1C1C]"
-                  >
-                    Farm 1
-                  </h4>
-
-                  <p
-                    class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                  >
-                    10 ha
-                  </p>
-                  <p
-                    class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                  >
-                    Crop cultivation: Maize
-                  </p>
-                </div>
-
-                <div class="flex items-center">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
-                      fill="#1C1C1C"
-                    />
-                  </svg>
-
-                  <span class="text-sm font-Poppins text-[#1C1C1C]"
-                    >Nairobi. Kenya</span
-                  >
-                </div>
-              </div>
-
-              <div
-                class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]"
-              >
-                <div class="">
-                  <h4
-                    class="text-base font-semibold font-Poppins text-[#1C1C1C]"
-                  >
-                    Farm 1
-                  </h4>
-
-                  <p
-                    class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                  >
-                    10 ha
-                  </p>
-                  <p
-                    class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                  >
-                    Crop cultivation: Maize
-                  </p>
-                </div>
-
-                <div class="flex items-center">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
-                      fill="#1C1C1C"
-                    />
-                  </svg>
-
-                  <span class="text-sm font-Poppins text-[#1C1C1C]"
-                    >Nairobi. Kenya</span
-                  >
-                </div>
-              </div>
-
-              <div class="seasonal-calender mt-16">
-                <h4
-                  class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]"
-                >
-                  Seasonal Calendar
+          <div class="tab-3 pt-[32px] w-full lg:w-1/2 py-4">
+            <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">
+              Farm Details
+            </h4>
+            <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+              <div class="">
+                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">
+                  Farm 1
                 </h4>
 
-                <div
-                  class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]"
-                >
-                  <div class="">
-                    <h4
-                      class="text-base font-semibold font-Poppins text-[#1C1C1C]"
-                    >
-                      Planting season
-                    </h4>
-                    <p
-                      class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                    >
-                      1st Jan 2024 -1st June 2024
-                    </p>
-                  </div>
-                </div>
+                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                  10 ha
+                </p>
+                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                  Crop cultivation: Maize
+                </p>
+              </div>
 
-                <div
-                  class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]"
-                >
-                  <div class="">
-                    <h4
-                      class="text-base font-semibold font-Poppins text-[#1C1C1C]"
-                    >
-                      Planting season
-                    </h4>
-                    <p
-                      class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                    >
-                      1st Jan 2024 -1st June 2024
-                    </p>
-                  </div>
-                </div>
+              <div class="flex items-center">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
+                    fill="#1C1C1C" />
+                </svg>
 
-                <div
-                  class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]"
-                >
-                  <div class="">
-                    <h4
-                      class="text-base font-semibold font-Poppins text-[#1C1C1C]"
-                    >
-                      Planting season
-                    </h4>
-                    <p
-                      class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]"
-                    >
-                      1st Jan 2024 -1st June 2024
-                    </p>
-                  </div>
+                <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+              <div class="">
+                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">
+                  Farm 1
+                </h4>
+
+                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                  10 ha
+                </p>
+                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                  Crop cultivation: Maize
+                </p>
+              </div>
+
+              <div class="flex items-center">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
+                    fill="#1C1C1C" />
+                </svg>
+
+                <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+              <div class="">
+                <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">
+                  Farm 1
+                </h4>
+
+                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                  10 ha
+                </p>
+                <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                  Crop cultivation: Maize
+                </p>
+              </div>
+
+              <div class="flex items-center">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7 3.5C6.56735 3.5 6.14442 3.6283 5.78469 3.86866C5.42496 4.10903 5.14458 4.45067 4.97901 4.85038C4.81345 5.25009 4.77013 5.68993 4.85453 6.11426C4.93894 6.53859 5.14728 6.92837 5.4532 7.2343C5.75913 7.54022 6.14891 7.74856 6.57324 7.83297C6.99757 7.91737 7.43741 7.87405 7.83712 7.70849C8.23683 7.54292 8.57847 7.26254 8.81884 6.90281C9.05921 6.54308 9.1875 6.12015 9.1875 5.6875C9.1875 5.10734 8.95703 4.55094 8.5468 4.1407C8.13656 3.73047 7.58016 3.5 7 3.5ZM7 7C6.74041 7 6.48665 6.92302 6.27081 6.7788C6.05497 6.63458 5.88675 6.4296 5.78741 6.18977C5.68807 5.94994 5.66208 5.68604 5.71272 5.43144C5.76336 5.17684 5.88837 4.94298 6.07192 4.75942C6.25548 4.57587 6.48934 4.45086 6.74394 4.40022C6.99854 4.34958 7.26244 4.37557 7.50227 4.47491C7.7421 4.57425 7.94708 4.74247 8.0913 4.95831C8.23552 5.17415 8.3125 5.42791 8.3125 5.6875C8.3125 6.0356 8.17422 6.36944 7.92808 6.61558C7.68194 6.86172 7.3481 7 7 7ZM7 0.875C5.72409 0.876447 4.50085 1.38394 3.59865 2.28615C2.69644 3.18835 2.18895 4.41159 2.1875 5.6875C2.1875 7.40469 2.98102 9.22469 4.48438 10.9512C5.15989 11.7313 5.92017 12.4338 6.75117 13.0457C6.82473 13.0972 6.91237 13.1249 7.00219 13.1249C7.092 13.1249 7.17964 13.0972 7.2532 13.0457C8.08267 12.4336 8.84148 11.7311 9.51562 10.9512C11.0168 9.22469 11.8125 7.40469 11.8125 5.6875C11.8111 4.41159 11.3036 3.18835 10.4014 2.28615C9.49915 1.38394 8.27591 0.876447 7 0.875ZM7 12.1406C6.09602 11.4297 3.0625 8.81836 3.0625 5.6875C3.0625 4.64321 3.47734 3.64169 4.21577 2.90327C4.95419 2.16484 5.95571 1.75 7 1.75C8.04429 1.75 9.04581 2.16484 9.78423 2.90327C10.5227 3.64169 10.9375 4.64321 10.9375 5.6875C10.9375 8.81727 7.90398 11.4297 7 12.1406Z"
+                    fill="#1C1C1C" />
+                </svg>
+
+                <span class="text-sm font-Poppins text-[#1C1C1C]">Nairobi. Kenya</span>
+              </div>
+            </div>
+
+            <div class="seasonal-calender mt-16">
+              <h4 class="text-[22px] font-medium font-Poppins pb-4 border-b border-[#8C8C8C] text-[#1C1C1C]">
+                Seasonal Calendar
+              </h4>
+
+              <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                <div class="">
+                  <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">
+                    Planting season
+                  </h4>
+                  <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                    1st Jan 2024 -1st June 2024
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                <div class="">
+                  <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">
+                    Planting season
+                  </h4>
+                  <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                    1st Jan 2024 -1st June 2024
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-end pt-6 pb-4 border-b border-[#8C8C8C]">
+                <div class="">
+                  <h4 class="text-base font-semibold font-Poppins text-[#1C1C1C]">
+                    Planting season
+                  </h4>
+                  <p class="text-[12px] font-Poppins tracking-[0.4px] text-[#1C1C1C]">
+                    1st Jan 2024 -1st June 2024
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
+  </div>
 
-    <script src="./index.js" defer></script>
-  </body>
+  <script src="./index.js" defer></script>
+</body>
+
 </html>
