@@ -348,9 +348,11 @@
           <div class="px-3 lg:px-6 py-3">
             <div class="flex justify-between items-center">
               <div class="flex justify-between items-center">
-                <div class="rounded border border-gray-2 relative w-10/12 lg:w-[250px]">
+                <div class=" border  rounded-md border-[#D0D0D0]/25 relative w-10/12 lg:w-[250px]">
+
+
                   <input type="text" placeholder="Search"
-                    class="bg-gray-12 py-2.5 pl-4 pr-10 focus:outline-gray-2 w-full" />
+                    class="bg-gray-12 py-2.5 pl-4 form-input rounded-md appearance-none outline-none! pr-10  w-full  " />
                   <svg class="h-[18px] w-auto absolute right-4 top-1/2 -translate-y-1/2 fill-gray-3" viewBox="0 0 17 18"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -360,11 +362,31 @@
               </div>
 
               <div
-                class="border border-[#D0D0D0] flex items-center rounded-md focus-within:border-dark relative group/select">
-                <select name="" id=""
-                  class="bg-transparent hidden lg:block accent-white py-2 w-full pl-3 pr-10 lg:pr-8 text-sm focus:outline-none text-gray-7 appearance-none relative lg:border-none">
-                  <option value="">Filter</option>
-                </select>
+                class="border border-[#D0D0D0] flex items-center rounded-md cursor-pointer group  relative focus-within:border-dark  "
+                tabindex="1">
+                <div
+                  class="dropdown absolute right-0 top-full w-32 h-auto bg-white hidden group-focus:block group-hover:block">
+                  <ul class="flex flex-col">
+
+                    <li
+                      class="py-2.5 px-3 text-Poppins text-base hover hover:bg-gray-100 cursor-pointer text-[#4F5253]">
+                      Beams</li>
+                    <li
+                      class="py-2.5 px-3 text-Poppins text-base hover hover:bg-gray-100 cursor-pointer text-[#4F5253]">
+                      Rice</li>
+                    <li
+                      class="py-2.5 px-3 text-Poppins text-base hover hover:bg-gray-100 cursor-pointer text-[#4F5253]">
+                      Rice</li>
+                    <li
+                      class="py-2.5 px-3 text-Poppins text-base hover hover:bg-gray-100 cursor-pointer text-[#4F5253]">
+                      Rice</li>
+                  </ul>
+                </div>
+                <div name="" id=""
+                  class="bg-transparent hidden lg:block accent-white py-2 w-full pl-3  text-sm focus:outline-none text-gray-7 appearance-none relative lg:border-none "
+                  tabindex="1">
+                  Filter
+                </div>
 
                 <div class="border h-full p-2.5 border-[#D0D0D0] lg:border-none">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
